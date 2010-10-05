@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ProgramasDel2 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ProgramasDel2Form extends BaseProgramasDel2Form
+{
+  public function configure()
+  {
+  }
+}

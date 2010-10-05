@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Usuarios form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class UsuariosForm extends BaseUsuariosForm
+{
+  public function configure()
+  {
+  }
+}

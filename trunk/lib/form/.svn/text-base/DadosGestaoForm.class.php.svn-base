@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DadosGestao form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DadosGestaoForm extends BaseDadosGestaoForm
+{
+  public function configure()
+  {
+  }
+}

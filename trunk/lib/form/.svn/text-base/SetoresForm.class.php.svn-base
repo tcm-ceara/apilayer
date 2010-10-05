@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Setores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class SetoresForm extends BaseSetoresForm
+{
+  public function configure()
+  {
+  }
+}

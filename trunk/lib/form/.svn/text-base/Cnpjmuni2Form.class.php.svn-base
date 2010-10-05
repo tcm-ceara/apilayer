@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Cnpjmuni2 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class Cnpjmuni2Form extends BaseCnpjmuni2Form
+{
+  public function configure()
+  {
+  }
+}

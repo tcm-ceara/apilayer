@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposEstrutura form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposEstruturaForm extends BaseTiposEstruturaForm
+{
+  public function configure()
+  {
+  }
+}

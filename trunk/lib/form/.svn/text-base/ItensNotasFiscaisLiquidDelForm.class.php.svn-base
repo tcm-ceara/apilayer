@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ItensNotasFiscaisLiquidDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ItensNotasFiscaisLiquidDelForm extends BaseItensNotasFiscaisLiquidDelForm
+{
+  public function configure()
+  {
+  }
+}

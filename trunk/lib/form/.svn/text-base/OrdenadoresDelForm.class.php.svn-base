@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OrdenadoresDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrdenadoresDelForm extends BaseOrdenadoresDelForm
+{
+  public function configure()
+  {
+  }
+}

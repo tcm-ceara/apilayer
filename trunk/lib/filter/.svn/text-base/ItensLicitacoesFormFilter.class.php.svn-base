@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ItensLicitacoes filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class ItensLicitacoesFormFilter extends BaseItensLicitacoesFormFilter
+{
+  public function configure()
+  {
+  }
+}

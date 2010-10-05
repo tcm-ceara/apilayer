@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AnulacTaloesReceitas form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AnulacTaloesReceitasForm extends BaseAnulacTaloesReceitasForm
+{
+  public function configure()
+  {
+  }
+}

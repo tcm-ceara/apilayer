@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ContratadosDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ContratadosDelForm extends BaseContratadosDelForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ReavalBaixasBensDel filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class ReavalBaixasBensDelFormFilter extends BaseReavalBaixasBensDelFormFilter
+{
+  public function configure()
+  {
+  }
+}

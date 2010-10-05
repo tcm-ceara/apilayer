@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AgentesInternet2 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AgentesInternet2Form extends BaseAgentesInternet2Form
+{
+  public function configure()
+  {
+  }
+}

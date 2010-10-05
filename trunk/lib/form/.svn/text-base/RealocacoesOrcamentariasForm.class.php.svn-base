@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * RealocacoesOrcamentarias form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class RealocacoesOrcamentariasForm extends BaseRealocacoesOrcamentariasForm
+{
+  public function configure()
+  {
+  }
+}

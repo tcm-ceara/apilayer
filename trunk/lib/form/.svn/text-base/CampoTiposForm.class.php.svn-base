@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CampoTipos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CampoTiposForm extends BaseCampoTiposForm
+{
+  public function configure()
+  {
+  }
+}

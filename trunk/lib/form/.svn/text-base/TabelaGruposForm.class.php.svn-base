@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TabelaGrupos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TabelaGruposForm extends BaseTabelaGruposForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * MuniLiberados form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class MuniLiberadosForm extends BaseMuniLiberadosForm
+{
+  public function configure()
+  {
+  }
+}

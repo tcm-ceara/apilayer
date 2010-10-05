@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TransfFinanceiras form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TransfFinanceirasForm extends BaseTransfFinanceirasForm
+{
+  public function configure()
+  {
+  }
+}

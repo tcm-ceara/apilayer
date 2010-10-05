@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * PublicEditaisLicitacoesDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class PublicEditaisLicitacoesDelForm extends BasePublicEditaisLicitacoesDelForm
+{
+  public function configure()
+  {
+  }
+}

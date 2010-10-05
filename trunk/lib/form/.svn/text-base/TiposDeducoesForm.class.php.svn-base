@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposDeducoes form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposDeducoesForm extends BaseTiposDeducoesForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * RespContasMensais form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class RespContasMensaisForm extends BaseRespContasMensaisForm
+{
+  public function configure()
+  {
+  }
+}

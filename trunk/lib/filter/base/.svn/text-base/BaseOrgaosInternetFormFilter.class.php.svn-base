@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * OrgaosInternet filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseOrgaosInternetFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_municipio'     => new sfWidgetFormFilterInput(),
+      'dt_versao_orc'    => new sfWidgetFormFilterInput(),
+      'cd_orgao'         => new sfWidgetFormFilterInput(),
+      'cd_tipo_unid_adm' => new sfWidgetFormFilterInput(),
+      'nm_orgao'         => new sfWidgetFormFilterInput(),
+      'nu_cgc_orgao'     => new sfWidgetFormFilterInput(),
+      'de_ender_orgao'   => new sfWidgetFormFilterInput(),
+      'nu_cep_orgao'     => new sfWidgetFormFilterInput(),
+      'nu_fone_orgao'    => new sfWidgetFormFilterInput(),
+      'nu_fax_orgao'     => new sfWidgetFormFilterInput(),
+      'de_email_orgao'   => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'cd_municipio'     => new sfValidatorPass(array('required' => false)),
+      'dt_versao_orc'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'cd_orgao'         => new sfValidatorPass(array('required' => false)),
+      'cd_tipo_unid_adm' => new sfValidatorPass(array('required' => false)),
+      'nm_orgao'         => new sfValidatorPass(array('required' => false)),
+      'nu_cgc_orgao'     => new sfValidatorPass(array('required' => false)),
+      'de_ender_orgao'   => new sfValidatorPass(array('required' => false)),
+      'nu_cep_orgao'     => new sfValidatorPass(array('required' => false)),
+      'nu_fone_orgao'    => new sfValidatorPass(array('required' => false)),
+      'nu_fax_orgao'     => new sfValidatorPass(array('required' => false)),
+      'de_email_orgao'   => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('orgaos_internet_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'OrgaosInternet';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'     => 'Text',
+      'dt_versao_orc'    => 'Number',
+      'cd_orgao'         => 'Text',
+      'cd_tipo_unid_adm' => 'Text',
+      'nm_orgao'         => 'Text',
+      'nu_cgc_orgao'     => 'Text',
+      'de_ender_orgao'   => 'Text',
+      'nu_cep_orgao'     => 'Text',
+      'nu_fone_orgao'    => 'Text',
+      'nu_fax_orgao'     => 'Text',
+      'de_email_orgao'   => 'Text',
+      'id'               => 'Number',
+    );
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CreditosAdicionaisTeste form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CreditosAdicionaisTesteForm extends BaseCreditosAdicionaisTesteForm
+{
+  public function configure()
+  {
+  }
+}

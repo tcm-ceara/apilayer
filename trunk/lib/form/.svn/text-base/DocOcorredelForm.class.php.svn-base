@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DocOcorredel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DocOcorredelForm extends BaseDocOcorredelForm
+{
+  public function configure()
+  {
+  }
+}

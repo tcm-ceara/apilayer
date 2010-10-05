@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ExtincoesItens form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ExtincoesItensForm extends BaseExtincoesItensForm
+{
+  public function configure()
+  {
+  }
+}

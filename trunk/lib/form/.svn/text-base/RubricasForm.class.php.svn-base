@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Rubricas form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class RubricasForm extends BaseRubricasForm
+{
+  public function configure()
+  {
+  }
+}

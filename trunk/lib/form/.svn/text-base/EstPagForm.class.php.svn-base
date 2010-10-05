@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EstPag form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EstPagForm extends BaseEstPagForm
+{
+  public function configure()
+  {
+  }
+}

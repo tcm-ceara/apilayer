@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * FormEspecial form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class FormEspecialForm extends BaseFormEspecialForm
+{
+  public function configure()
+  {
+  }
+}

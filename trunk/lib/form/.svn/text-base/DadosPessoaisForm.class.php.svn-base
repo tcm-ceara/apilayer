@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DadosPessoais form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DadosPessoaisForm extends BaseDadosPessoaisForm
+{
+  public function configure()
+  {
+  }
+}

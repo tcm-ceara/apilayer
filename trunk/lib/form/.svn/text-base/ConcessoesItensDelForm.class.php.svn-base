@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ConcessoesItensDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ConcessoesItensDelForm extends BaseConcessoesItensDelForm
+{
+  public function configure()
+  {
+  }
+}

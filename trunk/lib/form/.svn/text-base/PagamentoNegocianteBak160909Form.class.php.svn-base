@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * PagamentoNegocianteBak160909 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class PagamentoNegocianteBak160909Form extends BasePagamentoNegocianteBak160909Form
+{
+  public function configure()
+  {
+  }
+}

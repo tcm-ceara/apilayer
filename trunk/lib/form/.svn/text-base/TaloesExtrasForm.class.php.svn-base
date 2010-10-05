@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TaloesExtras form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TaloesExtrasForm extends BaseTaloesExtrasForm
+{
+  public function configure()
+  {
+  }
+}

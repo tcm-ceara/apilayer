@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * NotasPagamentos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class NotasPagamentosForm extends BaseNotasPagamentosForm
+{
+  public function configure()
+  {
+  }
+}

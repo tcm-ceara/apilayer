@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DadosContratados filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class DadosContratadosFormFilter extends BaseDadosContratadosFormFilter
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * DadosContratados filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseDadosContratadosFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'nm_contratado'          => new sfWidgetFormFilterInput(),
+      'de_endereco_contratado' => new sfWidgetFormFilterInput(),
+      'nu_fone_contratado'     => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'nm_contratado'          => new sfValidatorPass(array('required' => false)),
+      'de_endereco_contratado' => new sfValidatorPass(array('required' => false)),
+      'nu_fone_contratado'     => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('dados_contratados_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'DadosContratados';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'tp_doc_contratado'      => 'Text',
+      'nu_doc_contratado'      => 'Text',
+      'nm_contratado'          => 'Text',
+      'de_endereco_contratado' => 'Text',
+      'nu_fone_contratado'     => 'Text',
+    );
+  }
+}

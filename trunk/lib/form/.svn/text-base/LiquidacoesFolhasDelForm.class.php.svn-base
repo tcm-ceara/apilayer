@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * LiquidacoesFolhasDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class LiquidacoesFolhasDelForm extends BaseLiquidacoesFolhasDelForm
+{
+  public function configure()
+  {
+  }
+}

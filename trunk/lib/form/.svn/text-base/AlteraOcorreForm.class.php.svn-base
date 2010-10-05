@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AlteraOcorre form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AlteraOcorreForm extends BaseAlteraOcorreForm
+{
+  public function configure()
+  {
+  }
+}

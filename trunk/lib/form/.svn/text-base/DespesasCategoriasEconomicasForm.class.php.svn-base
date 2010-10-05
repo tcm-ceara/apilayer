@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DespesasCategoriasEconomicas form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DespesasCategoriasEconomicasForm extends BaseDespesasCategoriasEconomicasForm
+{
+  public function configure()
+  {
+  }
+}

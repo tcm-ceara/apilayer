@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Cbo1 filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class Cbo1FormFilter extends BaseCbo1FormFilter
+{
+  public function configure()
+  {
+  }
+}

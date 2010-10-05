@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TempNotasEmpenhos03092009 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TempNotasEmpenhos03092009Form extends BaseTempNotasEmpenhos03092009Form
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Licitacoes form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class LicitacoesForm extends BaseLicitacoesForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * NegociantesTestes filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class NegociantesTestesFormFilter extends BaseNegociantesTestesFormFilter
+{
+  public function configure()
+  {
+  }
+}

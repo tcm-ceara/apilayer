@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Cbo2008 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class Cbo2008Form extends BaseCbo2008Form
+{
+  public function configure()
+  {
+  }
+}

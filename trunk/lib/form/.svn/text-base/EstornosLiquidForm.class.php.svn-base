@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EstornosLiquid form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EstornosLiquidForm extends BaseEstornosLiquidForm
+{
+  public function configure()
+  {
+  }
+}

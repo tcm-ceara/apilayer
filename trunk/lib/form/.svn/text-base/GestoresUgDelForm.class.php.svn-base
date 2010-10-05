@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * GestoresUgDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class GestoresUgDelForm extends BaseGestoresUgDelForm
+{
+  public function configure()
+  {
+  }
+}

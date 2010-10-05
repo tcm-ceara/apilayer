@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Ordenadores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrdenadoresForm extends BaseOrdenadoresForm
+{
+  public function configure()
+  {
+  }
+}

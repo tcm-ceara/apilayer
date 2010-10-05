@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * BalDespOrcT form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class BalDespOrcTForm extends BaseBalDespOrcTForm
+{
+  public function configure()
+  {
+  }
+}

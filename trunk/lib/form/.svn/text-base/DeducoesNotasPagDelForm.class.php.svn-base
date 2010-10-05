@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DeducoesNotasPagDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DeducoesNotasPagDelForm extends BaseDeducoesNotasPagDelForm
+{
+  public function configure()
+  {
+  }
+}

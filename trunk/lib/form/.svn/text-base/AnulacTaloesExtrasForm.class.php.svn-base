@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AnulacTaloesExtras form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AnulacTaloesExtrasForm extends BaseAnulacTaloesExtrasForm
+{
+  public function configure()
+  {
+  }
+}

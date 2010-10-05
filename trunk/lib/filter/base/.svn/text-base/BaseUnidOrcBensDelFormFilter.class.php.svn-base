@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * UnidOrcBensDel filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseUnidOrcBensDelFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_municipio'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nu_registro_bem'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_disponibilizacao_uob' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'dt_ref_uob'              => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_versao_orc'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_orgao'                => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_unid_orc'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_cpf_serv_muni'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_ingresso'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_vinculo'              => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nu_expediente_no'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+    ));
+
+    $this->setValidators(array(
+      'cd_municipio'            => new sfValidatorPass(array('required' => false)),
+      'nu_registro_bem'         => new sfValidatorPass(array('required' => false)),
+      'dt_disponibilizacao_uob' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'dt_ref_uob'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'dt_versao_orc'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'cd_orgao'                => new sfValidatorPass(array('required' => false)),
+      'cd_unid_orc'             => new sfValidatorPass(array('required' => false)),
+      'cd_cpf_serv_muni'        => new sfValidatorPass(array('required' => false)),
+      'cd_ingresso'             => new sfValidatorPass(array('required' => false)),
+      'cd_vinculo'              => new sfValidatorPass(array('required' => false)),
+      'nu_expediente_no'        => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('unid_orc_bens_del_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'UnidOrcBensDel';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'            => 'Text',
+      'nu_registro_bem'         => 'Text',
+      'dt_disponibilizacao_uob' => 'Date',
+      'dt_ref_uob'              => 'Number',
+      'dt_versao_orc'           => 'Number',
+      'cd_orgao'                => 'Text',
+      'cd_unid_orc'             => 'Text',
+      'cd_cpf_serv_muni'        => 'Text',
+      'cd_ingresso'             => 'Text',
+      'cd_vinculo'              => 'Text',
+      'nu_expediente_no'        => 'Text',
+      'id'                      => 'Number',
+    );
+  }
+}

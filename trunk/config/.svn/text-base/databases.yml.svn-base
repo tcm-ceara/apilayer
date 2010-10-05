@@ -1,0 +1,31 @@
+all:
+  propel:
+    class:      sfPropelDatabase
+    param:      
+      dsn: pgsql:host=192.168.1.44;dbname=api;user=postgres;password=1234
+      
+  api:
+    class:      sfPropelDatabase
+    param:      
+      dsn: pgsql:host=192.168.0.8;dbname=api;user=postgres;password=postgres
+      
+  sim:
+    class: sfPropelDatabase
+    param:
+      classname: MssqlPropelPDO
+      phptype: mssql
+      dsn: dblib:host=192.168.0.83;dbname=sim6;charset=utf-8
+      username: sim_con
+      password: sim_con
+      encoding: null
+      pooling: true
+
+  sgp:
+    class:      sfPropelDatabase
+    param:      
+      dsn: pgsql://postgres:postgres@192.168.0.8/sgp
+
+  tre:
+    class:      sfPropelDatabase
+    param:      
+      dsn: pgsql:host=192.168.0.8;dbname=sgp;user=postgres;password=postgres

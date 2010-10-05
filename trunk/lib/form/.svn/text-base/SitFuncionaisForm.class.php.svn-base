@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * SitFuncionais form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class SitFuncionaisForm extends BaseSitFuncionaisForm
+{
+  public function configure()
+  {
+  }
+}

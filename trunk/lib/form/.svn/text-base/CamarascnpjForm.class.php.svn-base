@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Camarascnpj form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CamarascnpjForm extends BaseCamarascnpjForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ElementosDespesa form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ElementosDespesaForm extends BaseElementosDespesaForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Engenheiros form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EngenheirosForm extends BaseEngenheirosForm
+{
+  public function configure()
+  {
+  }
+}

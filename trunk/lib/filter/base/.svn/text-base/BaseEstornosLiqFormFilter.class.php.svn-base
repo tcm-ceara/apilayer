@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * EstornosLiq filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseEstornosLiqFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'dt_estorno_el'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'dt_ref_el'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nm_assessor_el'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'de_justificativa_el' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+    ));
+
+    $this->setValidators(array(
+      'dt_estorno_el'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'dt_ref_el'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'nm_assessor_el'      => new sfValidatorPass(array('required' => false)),
+      'de_justificativa_el' => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('estornos_liq_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'EstornosLiq';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'        => 'Text',
+      'dt_versao_orc'       => 'ForeignKey',
+      'cd_orgao'            => 'ForeignKey',
+      'cd_unid_orc'         => 'ForeignKey',
+      'dt_emissao_ne'       => 'ForeignKey',
+      'nu_nota_empenho'     => 'ForeignKey',
+      'dt_liquid_liq'       => 'ForeignKey',
+      'dt_estorno_el'       => 'Date',
+      'dt_ref_el'           => 'Number',
+      'nm_assessor_el'      => 'Text',
+      'de_justificativa_el' => 'Text',
+    );
+  }
+}

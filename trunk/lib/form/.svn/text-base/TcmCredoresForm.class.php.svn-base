@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TcmCredores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TcmCredoresForm extends BaseTcmCredoresForm
+{
+  public function configure()
+  {
+  }
+}

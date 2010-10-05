@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * VariacoesExtraOrc form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class VariacoesExtraOrcForm extends BaseVariacoesExtraOrcForm
+{
+  public function configure()
+  {
+  }
+}

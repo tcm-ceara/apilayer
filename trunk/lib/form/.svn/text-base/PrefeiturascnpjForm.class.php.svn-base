@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Prefeiturascnpj form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class PrefeiturascnpjForm extends BasePrefeiturascnpjForm
+{
+  public function configure()
+  {
+  }
+}

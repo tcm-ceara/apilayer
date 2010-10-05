@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Credores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CredoresForm extends BaseCredoresForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * NotasPagamentosDel filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class NotasPagamentosDelFormFilter extends BaseNotasPagamentosDelFormFilter
+{
+  public function configure()
+  {
+  }
+}

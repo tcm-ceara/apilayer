@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * PrazosEntrega form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class PrazosEntregaForm extends BasePrazosEntregaForm
+{
+  public function configure()
+  {
+  }
+}

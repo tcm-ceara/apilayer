@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * VicePrefeitos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class VicePrefeitosForm extends BaseVicePrefeitosForm
+{
+  public function configure()
+  {
+  }
+}

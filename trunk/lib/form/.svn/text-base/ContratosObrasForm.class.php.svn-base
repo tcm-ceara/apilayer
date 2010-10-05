@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ContratosObras form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ContratosObrasForm extends BaseContratosObrasForm
+{
+  public function configure()
+  {
+  }
+}

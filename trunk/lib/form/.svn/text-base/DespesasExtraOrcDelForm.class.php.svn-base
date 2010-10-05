@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DespesasExtraOrcDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DespesasExtraOrcDelForm extends BaseDespesasExtraOrcDelForm
+{
+  public function configure()
+  {
+  }
+}

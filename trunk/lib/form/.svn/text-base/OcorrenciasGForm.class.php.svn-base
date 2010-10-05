@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OcorrenciasG form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OcorrenciasGForm extends BaseOcorrenciasGForm
+{
+  public function configure()
+  {
+  }
+}

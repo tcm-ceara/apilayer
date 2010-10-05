@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CnpjCamaras form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CnpjCamarasForm extends BaseCnpjCamarasForm
+{
+  public function configure()
+  {
+  }
+}

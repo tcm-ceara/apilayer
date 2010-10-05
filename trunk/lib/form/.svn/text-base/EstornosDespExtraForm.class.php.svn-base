@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EstornosDespExtra form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EstornosDespExtraForm extends BaseEstornosDespExtraForm
+{
+  public function configure()
+  {
+  }
+}

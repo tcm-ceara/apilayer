@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * DeducoesNotasPagas filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseDeducoesNotasPagasFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'dt_ref_doc_dnp'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'vl_deducao_dnp'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'tp_classificacao_dnp' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+    ));
+
+    $this->setValidators(array(
+      'dt_ref_doc_dnp'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'vl_deducao_dnp'       => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'tp_classificacao_dnp' => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('deducoes_notas_pagas_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'DeducoesNotasPagas';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'         => 'ForeignKey',
+      'dt_versao_orc'        => 'ForeignKey',
+      'cd_orgao'             => 'ForeignKey',
+      'cd_unid_orc'          => 'ForeignKey',
+      'dt_emissao_ne'        => 'ForeignKey',
+      'nu_nota_empenho'      => 'ForeignKey',
+      'nu_sub_empenho_np'    => 'ForeignKey',
+      'nu_nota_np'           => 'ForeignKey',
+      'cd_conta_ctx'         => 'ForeignKey',
+      'dt_ref_doc_dnp'       => 'Number',
+      'vl_deducao_dnp'       => 'Number',
+      'tp_classificacao_dnp' => 'Text',
+    );
+  }
+}

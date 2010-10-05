@@ -1,0 +1,126 @@
+10
+
+dir
+35
+svn://192.168.0.34/repositorios/api/trunk/lib/rdfapi
+svn://192.168.0.34/repositorios/api
+
+
+
+2010-07-19T13:43:01.664504Z
+24
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1cd0ad94-b1b1-4a8b-9bd3-0a9d0c6fd1a1
+
+model
+dir
+
+ontModel
+dir
+
+rdql
+dir
+
+sparql
+dir
+
+constants.php
+file
+
+
+
+
+2010-08-02T18:28:24.000000Z
+1ead223a9ac402ec2b43b1f3cf5e8aec
+2010-07-19T13:43:01.664504Z
+24
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16979
+
+dataset
+dir
+
+syntax
+dir
+
+vocabulary
+dir
+
+resModel
+dir
+
+RdfAPI.php
+file
+
+
+
+
+2010-08-02T18:28:24.000000Z
+84ad87eaa2da8cdc09685a082110d572
+2010-07-19T13:43:01.664504Z
+24
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+794
+
+infModel
+dir
+
+util
+dir
+

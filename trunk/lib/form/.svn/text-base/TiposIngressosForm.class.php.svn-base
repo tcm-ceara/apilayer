@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposIngressos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposIngressosForm extends BaseTiposIngressosForm
+{
+  public function configure()
+  {
+  }
+}

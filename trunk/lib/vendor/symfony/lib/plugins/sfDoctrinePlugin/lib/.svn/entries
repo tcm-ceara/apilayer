@@ -1,0 +1,104 @@
+10
+
+dir
+35
+svn://192.168.0.34/repositorios/api/trunk/lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/lib
+svn://192.168.0.34/repositorios/api
+
+
+
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1cd0ad94-b1b1-4a8b-9bd3-0a9d0c6fd1a1
+
+test
+dir
+
+widget
+dir
+
+validator
+dir
+
+debug
+dir
+
+generator
+dir
+
+routing
+dir
+
+vendor
+dir
+
+pager
+dir
+
+task
+dir
+
+form
+dir
+
+database
+dir
+
+cli
+dir
+
+mailer
+dir
+
+sfDoctrineException.class.php
+file
+
+
+
+
+2010-06-29T14:31:54.000000Z
+29381328202ea19cc35c83378f73cca1
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+656
+
+record
+dir
+

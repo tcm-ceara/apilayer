@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * GrausInstrucao form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class GrausInstrucaoForm extends BaseGrausInstrucaoForm
+{
+  public function configure()
+  {
+  }
+}

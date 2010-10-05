@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UoInternet form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class UoInternetForm extends BaseUoInternetForm
+{
+  public function configure()
+  {
+  }
+}

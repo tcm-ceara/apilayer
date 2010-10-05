@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * FormaIngresso form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class FormaIngressoForm extends BaseFormaIngressoForm
+{
+  public function configure()
+  {
+  }
+}

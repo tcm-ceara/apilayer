@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposDesligamentos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposDesligamentosForm extends BaseTiposDesligamentosForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UnidOrcUgT form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class UnidOrcUgTForm extends BaseUnidOrcUgTForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Municipios filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class MunicipiosFormFilter extends BaseMunicipiosFormFilter
+{
+  public function configure()
+  {
+  }
+}

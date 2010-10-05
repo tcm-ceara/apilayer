@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DadosContratados form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DadosContratadosForm extends BaseDadosContratadosForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CertidoesSim form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CertidoesSimForm extends BaseCertidoesSimForm
+{
+  public function configure()
+  {
+  }
+}

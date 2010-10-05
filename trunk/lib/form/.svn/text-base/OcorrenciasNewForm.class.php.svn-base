@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OcorrenciasNew form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OcorrenciasNewForm extends BaseOcorrenciasNewForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Tabelassim form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TabelassimForm extends BaseTabelassimForm
+{
+  public function configure()
+  {
+  }
+}

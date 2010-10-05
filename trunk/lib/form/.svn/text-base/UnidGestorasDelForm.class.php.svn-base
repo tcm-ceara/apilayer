@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UnidGestorasDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class UnidGestorasDelForm extends BaseUnidGestorasDelForm
+{
+  public function configure()
+  {
+  }
+}

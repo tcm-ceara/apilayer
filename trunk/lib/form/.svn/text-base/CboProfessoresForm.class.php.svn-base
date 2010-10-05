@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CboProfessores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CboProfessoresForm extends BaseCboProfessoresForm
+{
+  public function configure()
+  {
+  }
+}

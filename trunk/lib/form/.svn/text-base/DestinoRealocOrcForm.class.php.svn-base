@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DestinoRealocOrc form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DestinoRealocOrcForm extends BaseDestinoRealocOrcForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * RecursosEmpenhosDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class RecursosEmpenhosDelForm extends BaseRecursosEmpenhosDelForm
+{
+  public function configure()
+  {
+  }
+}

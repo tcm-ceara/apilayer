@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ApoioLucene form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ApoioLuceneForm extends BaseApoioLuceneForm
+{
+  public function configure()
+  {
+  }
+}

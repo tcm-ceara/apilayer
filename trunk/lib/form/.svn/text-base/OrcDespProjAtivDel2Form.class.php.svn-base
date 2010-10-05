@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OrcDespProjAtivDel2 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrcDespProjAtivDel2Form extends BaseOrcDespProjAtivDel2Form
+{
+  public function configure()
+  {
+  }
+}

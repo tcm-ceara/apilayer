@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CboUnico form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CboUnicoForm extends BaseCboUnicoForm
+{
+  public function configure()
+  {
+  }
+}

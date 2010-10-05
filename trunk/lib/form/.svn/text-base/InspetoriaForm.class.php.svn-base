@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Inspetoria form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class InspetoriaForm extends BaseInspetoriaForm
+{
+  public function configure()
+  {
+  }
+}

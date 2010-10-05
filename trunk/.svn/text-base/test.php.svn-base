@@ -1,0 +1,64 @@
+<?php 
+if (!($connect = @ldap_connect('192.168.0.119'))) {
+    die("Não foi possível se conectar com o servidor de AD");
+} else {
+    echo "Conectado com sucesso !!! \n";
+}
+
+$user='TCMDC\adwebuser';
+$passwd='@dw3bu53r';
+
+if (!($bind = @ldap_bind($connect, $user, $passwd))) { 
+    //se não validar 
+    echo "Usuário ou senha incorretos! \n";
+} else {
+    //se validar 
+    echo "Usuário autenticado! \n";
+}
+echo "procurando...\n";
+// Search the user
+    $sr = @ldap_search($connect, "ou=TCM,dc=tcm,dc=local", "sAMAccountName=F19030512");
+    if (@ldap_count_entries($connect, $sr) <= 0)
+      return false;
+    $entry = ldap_first_entry($connect, $sr);
+    $dn = ldap_get_dn($connect, $entry);
+    ldap_free_result($sr);
+    if (is_string($dn) && !empty($dn)) {
+    echo "$dn \n";
+      if (!@ldap_bind($connect, $dn, "r3l0g!o")) {
+        echo "NOK 1 \n";;
+      } else {
+        echo "OK \n";;
+      }
+    }
+    
+
+
+ ?>
+ 
+ <?php /*
+// specify the LDAP server to connect to
+$conn = ldap_connect("192.168.0.119") or die("Could not connect to server");  
+// bind to the LDAP server specified above 
+$r = ldap_bind($conn) or die("Could not bind to server");     
+// start searching
+// specify both the start location and the search criteria
+// in this case, start at the top and return all entries $result =
+ldap_search($conn,"dc=tcm, dc=local", "(cn=*)");// or die ("Error in search query");
+//ldap_search($conn,"dc=tcm, dc=local", "(cn=*)");// or die ("Error in search query");    
+// get entry data as array
+$info = ldap_get_entries($conn, $result);
+// iterate over array and print data for each entry
+for ($i=0; $i<$info["count"]; $i++) 
+{
+echo "dn is: ". $info[$i]["dn"] ."<br>";
+echo "first cn is: ". $info[$i]["cn"][0] ."<br>";
+echo "first email address is: ". $info[$i]["mail"][0] ."<p>"; }
+// print number of entries found
+echo "Number of entries found: " . ldap_count_entries($conn, $result) .
+"<p>";
+// all done? clean up
+ldap_close($conn);
+*/
+?>
+

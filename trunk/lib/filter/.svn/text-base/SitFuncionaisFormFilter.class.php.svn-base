@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * SitFuncionais filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class SitFuncionaisFormFilter extends BaseSitFuncionaisFormFilter
+{
+  public function configure()
+  {
+  }
+}

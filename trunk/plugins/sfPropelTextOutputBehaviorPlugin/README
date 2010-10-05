@@ -1,0 +1,300 @@
+= sfPropelTextOutputBehaviorPlugin plugin =
+
+== Overview ==
+
+This plugin enhance Propel objects for different output formats: 
+
+  - XML
+  - JSON
+
+== Installation ==
+
+1. Install the plugin from the repository
+
+{{{
+symfony plugin-install http://plugins.symfony-project.com/sfPropelTextOutputBehaviorPlugin
+}}}
+
+or install from local file.  
+
+{{{
+symfony plugin-install sfPropelTextOutputBehaviorPlugin-0.0.3.tgz
+}}}
+
+2. Enable Propel behavior support in propel.ini
+
+{{{
+propel.builder.AddBehaviors = true
+}}}  
+
+3. Rebuild your model and clean the cache
+
+{{{
+symfony propel-build-model
+symfony cc
+}}}  
+
+4. Enable your module to use enhanced methods
+
+{{{
+#!php
+// lib/model/Article.php
+class Article extends BaseArticle
+{
+}
+sfPropelBehavior::add('Article', array('text_output'));
+}}}
+
+== Uninstallation ==
+
+1. Uninstall the plugin
+
+{{{
+symfony plugin-uninstall symfony/sfPropelTextOutputBehaviorPlugin
+}}}
+
+2. Remove the sfProbleBehavior from model
+
+{{{
+#!php
+// lib/model/Article.php
+class Article extends BaseArticle
+{
+}
+// delete this line
+sfPropelBehavior::add('Article', array('text_output'));
+}}}
+
+== Usage ==
+
+{{{
+// config/schema.yml   
+propel:
+  article:
+    _attributes:        { phpName: Article }
+    id:
+    id_author    { type: integer, foreignTable: author, foreignReference: id, onDelete: RESTRICT }
+    title:       varchar(255)
+    content:     longvarchar
+    created_at:
+
+  author:
+    _attributes:        { phpName: Author }
+    id:
+    first_name:  varchar(255)
+    last_name:   varchar(255)
+}}}
+
+{{{
+#!php
+<Articles>
+<?php 
+  foreach ($articles as $article) 
+  {
+    echo ' ', $article->asXML(), "\n";
+  }
+?>
+</Articles>
+
+// output
+<Articles>
+  <article><id>1</id><id_author>1</id_author><title>Lorem ipsum dolor</title><content>Habitasse quam Nulla justo dolor malesuada...</content></article>
+  <article><id>2</id><id_author>2</id_author><title>Lorem ipsum dolor</title><content>Habitasse quam Nulla justo dolor malesuada...</content></article>
+</Articles>
+}}}
+
+{{{
+#!php
+<Articles>
+<?php 
+  foreach ($articles as $article) 
+  {
+    echo ' ', $article->asXML(array('hydrate'=>true)), "\n";
+  }
+?>
+</Articles>
+
+// output
+<Articles>
+  <article><id>1</id><id_author>1</id_author><author_id>1</author_id><author_first_name>Foo 1</author_first_name><author_last_name>Bar 1</author_last_name><title>Lorem ipsum dolor</title><content>Habitasse quam Nulla justo dolor malesuada...</content></article>
+  <article><id>2</id><id_author>2</id_author><author_id>2</author_id><author_first_name>Foo 2</author_first_name><author_last_name>Bar 2</author_last_name><title>Lorem ipsum dolor</title><content>Habitasse quam Nulla justo dolor malesuada...</content></article>
+</Articles>
+}}}
+
+{{{
+#!php
+<Articles>
+<?php 
+  $mapping = array(
+    'element'     => 'article',
+    'elements'    => array( 
+      'id'        => array('element'=>'id',   'format'=>'%s'), 
+      'id_author' => array('element'=>'a_id', 'format'=>'%s'), 
+      'title'     => array('element'=>'t',    'format'=>'<![CDATA[%s]]>'),
+      'content'   => array('element'=>'c',    'format'=>'<![CDATA[%s]]>')
+    )
+  );
+  foreach ($articles as $article) 
+  {
+    echo ' ', article->asXML($mapping), "\n";
+  }
+?>
+</Articles>
+
+// output
+<Articles>
+  <article><id>1</id><a_id>1</a_id><t><![CDATA[Lorem ipsum dolor]]></t><c><![CDATA[Habitasse quam Nulla justo dolor malesuada...]]></c></article>
+  <article><id>2</id><a_id>2</a_id><t><![CDATA[Lorem ipsum dolor]]></t><c><![CDATA[Habitasse quam Nulla justo dolor malesuada...]]></c></article>
+</Articles>
+}}}
+
+{{{
+#!php
+<Articles>
+<?php 
+  $mapping = array(
+    'hydrate'     => true,
+    'element'     => 'article',
+    'elements'    => array( 
+      'id'                => array('element'=>'id',       'format'=>'%s'), 
+      'id_author'         => array('element'=>'a_id',     'format'=>'%s'), 
+      'author_first_name' => array('element'=>'a_f_name', 'format'=>'<![CDATA[%s]]>'), 
+      'author_last_name'  => array('element'=>'a_l_name', 'format'=>'<![CDATA[%s]]>'), 
+      'title'             => array('element'=>'t',        'format'=>'<![CDATA[%s]]>'),
+      'content'           => array('element'=>'c',        'format'=>'<![CDATA[%s]]>')
+    )
+  );
+  foreach ($articles as $article) 
+  {
+    echo ' ', article->asXML($mapping), "\n";
+  }
+?>
+</Articles>
+
+// output
+<Articles>
+  <article><id>1</id><a_id>1</a_id><a_f_name><![CDATA[Foo 1]]></a_f_name><a_l_name><![CDATA[Bar 1]]></a_l_name><t>Lorem ipsum dolor</t><c><![CDATA[Habitasse quam Nulla justo dolor malesuada...]]></c></article>
+  <article><id>2</id><a_id>2</a_id><a_f_name><![CDATA[Foo 2]]></a_f_name><a_l_name><![CDATA[Bar 2]]></a_l_name><t>Lorem ipsum dolor</t><c><![CDATA[Habitasse quam Nulla justo dolor malesuada...]]></c></article>
+</Articles>
+}}}
+
+
+{{{
+#!php
+{Articles:[
+<?php 
+  $i=0;
+  foreach ($articles as $article) 
+  {
+    echo ' ', $article->asJSON(),(++$i < count($articles) ? ',' : ''), "\n";
+  }
+?>
+]}
+
+// output
+{Articles:[
+  {"id":"1", "id_author":"1", "title": "Lorem ipsum dolor", content: "Habitasse quam Nulla justo dolor malesuada..."},
+  {"id":"2", "id_author":"2", "title": "Lorem ipsum dolor", content: "Habitasse quam Nulla justo dolor malesuada..."}
+]}
+}}}
+
+{{{
+#!php
+{Articles:[
+<?php 
+  $i=0;
+  foreach ($articles as $article) 
+  {
+    echo ' ', $article->asJSON(array('hydrate'=>true)),(++$i < count($articles) ? ',' : ''), "\n";
+  }
+?>
+]}
+
+// output
+{Articles:[
+  {"id":"1", "id_author":"1", "author_id":"1", "author_first_name":"Foo 1", "author_last_name":"Bar 1", "title": "Lorem ipsum dolor", content: "Habitasse quam Nulla justo dolor malesuada..."},
+  {"id":"2", "id_author":"2", "author_id":"2", "author_first_name":"Foo 2", "author_last_name":"Bar 2", "title": "Lorem ipsum dolor", content: "Habitasse quam Nulla justo dolor malesuada..."}
+]}
+}}}
+
+{{{
+#!php
+{Articles:[
+<?php 
+  $i=0;
+  $mapping = array(
+    'element'   => 'article',
+    'elements'  => array( 
+      'id'      => array('element'=>'id', 'format'=>'%s'), 
+      'title'   => array('element'=>'t',  'format'=>'%s'),
+      'content' => array('element'=>'c',  'format'=>'%s')
+    )
+  );
+  foreach ($articles as $article) 
+  {
+    echo ' ', $article->asJSON($mapping),(++$i < count($articles) ? ',' : ''), "\n";
+  }
+?>
+]}
+
+// output
+{Articles:[
+  {"id":"1", "t": "Lorem ipsum dolor", "c": "Habitasse quam Nulla justo dolor malesuada..."},
+  {"id":"2", "t": "Lorem ipsum dolor", "c": "Habitasse quam Nulla justo dolor malesuada..."}
+]}
+}}}
+
+{{{
+#!php
+{Articles:[
+<?php 
+  $i=0;
+  $mapping = array(
+    'hydrate'             => true,
+    'element'             => 'article',
+    'elements'            => array( 
+      'id'                => array('element'=>'id',       'format'=>'%s'), 
+      'id_author'         => array('element'=>'a_id',     'format'=>'%s'), 
+      'author_first_name' => array('element'=>'a_f_name', 'format'=>'%s'), 
+      'author_last_name'  => array('element'=>'a_l_name', 'format'=>'%s'), 
+      'title'             => array('element'=>'t',        'format'=>'%s'),
+      'content'           => array('element'=>'c',        'format'=>'%s')
+    )
+  );
+  foreach ($articles as $article) 
+  {
+    echo ' ', $article->asJSON($mapping),(++$i < count($articles) ? ',' : ''), "\n";
+  }
+?>
+]}
+
+// output
+{Articles:[
+  {"id":"1", "a_id":"1" , "a_f_name": "Foo 1" , "a_l_name": "Bar 1" , "t": "Lorem ipsum dolor", "c": "Habitasse quam Nulla justo dolor malesuada..."},
+  {"id":"2", "a_id":"2" , "a_f_name": "Foo 2" , "a_l_name": "Bar 2" , "t": "Lorem ipsum dolor", "c": "Habitasse quam Nulla justo dolor malesuada..."}
+]}
+}}}
+
+=== 2008-05-12 | 0.0.4 Beta === 
+  - Reflection logic replaced by call_user_func
+  - Hydrate logic for joined tables implemented 
+
+=== 2007-08-25 | 0.0.3 Beta === 
+  - Documentation overworked
+  - Source regarding coding and naming convention overworked
+
+=== 2007-08-25 | 0.0.2 Beta === 
+  - Making plugin a behavior for Proble objects
+  - Method obj2XML renamed to asXML
+  - Method obj2JSON renamed to asJSON
+  - Documentation overworked 
+
+=== 2007-08-23 | 0.0.1 Beta ===
+  - created
+ 
+== Active tickets ==
+
+[[TicketQuery(component=sfPropelTextOutputBehaviorPlugin&status!=closed)]]
+
+----
+see also : SymfonyPlugins

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * GestSubstitutos filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class GestSubstitutosFormFilter extends BaseGestSubstitutosFormFilter
+{
+  public function configure()
+  {
+  }
+}

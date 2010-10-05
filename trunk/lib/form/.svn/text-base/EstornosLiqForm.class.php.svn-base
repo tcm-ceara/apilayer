@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EstornosLiq form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EstornosLiqForm extends BaseEstornosLiqForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Cnpj form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CnpjForm extends BaseCnpjForm
+{
+  public function configure()
+  {
+  }
+}

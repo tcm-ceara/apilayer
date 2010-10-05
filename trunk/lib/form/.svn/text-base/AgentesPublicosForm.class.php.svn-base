@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AgentesPublicos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AgentesPublicosForm extends BaseAgentesPublicosForm
+{
+  public function configure()
+  {
+  }
+}

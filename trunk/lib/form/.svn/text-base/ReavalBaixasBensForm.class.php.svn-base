@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ReavalBaixasBens form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ReavalBaixasBensForm extends BaseReavalBaixasBensForm
+{
+  public function configure()
+  {
+  }
+}

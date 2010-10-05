@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * ItensLicitacoes filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseItensLicitacoesFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'nu_doc_ng'              => new sfWidgetFormPropelChoice(array('model' => 'Licitantes', 'add_empty' => true)),
+      'de_item_il'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'vl_venc_item_il'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_tipo_ng'             => new sfWidgetFormFilterInput(),
+      'de_unid_item_il'        => new sfWidgetFormFilterInput(),
+      'nu_quant_item_il'       => new sfWidgetFormFilterInput(),
+      'vl_unit_item_il'        => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'nu_doc_ng'              => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Licitantes', 'column' => 'nu_doc_ng')),
+      'de_item_il'             => new sfValidatorPass(array('required' => false)),
+      'vl_venc_item_il'        => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'cd_tipo_ng'             => new sfValidatorPass(array('required' => false)),
+      'de_unid_item_il'        => new sfValidatorPass(array('required' => false)),
+      'nu_quant_item_il'       => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'vl_unit_item_il'        => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+    ));
+
+    $this->widgetSchema->setNameFormat('itens_licitacoes_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'ItensLicitacoes';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'           => 'ForeignKey',
+      'dt_realizacao_licit_li' => 'ForeignKey',
+      'nu_licitacao_li'        => 'ForeignKey',
+      'nu_seq_item_il'         => 'Number',
+      'nu_doc_ng'              => 'ForeignKey',
+      'de_item_il'             => 'Text',
+      'vl_venc_item_il'        => 'Number',
+      'cd_tipo_ng'             => 'Text',
+      'de_unid_item_il'        => 'Text',
+      'nu_quant_item_il'       => 'Number',
+      'vl_unit_item_il'        => 'Number',
+    );
+  }
+}

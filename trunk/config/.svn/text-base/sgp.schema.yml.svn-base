@@ -1,0 +1,18 @@
+propel:
+  pessoas_procs_contas_irregulares_2009:
+    cd_pessoa_pe: { type: varchar(18), primaryKey: true, required: false }
+    nm_pessoa_pe: { type: varchar(60), required: false }
+    status: { type: varchar(1), required: false }
+    dh_atualizacao: { type: timestamp, required: false }  
+  procs_contas_irregulares_2009:
+    nm_pessoa_pe: { type: varchar(100), required: false }
+    nu_protocolo_pr: { type: integer, required: false }
+    nm_municipio_mu: { type: varchar(100), required: false }
+    nm_tipoproc_tp: { type: varchar(100), required: false }
+    dt_competencia_pr: { type: varchar(17), required: false }
+    nota_improbidade: { type: varchar(1), required: false }
+    cd_pessoa_pe: { type: varchar(18), required: false }
+    cd_municipio_mu: { type: varchar(3), required: false }
+    nu_docgerado_ps: { type: varchar(18), required: false }
+    status: { type: varchar(1), required: false }
+    sq_chave: { type: integer, primaryKey: true, required: false }

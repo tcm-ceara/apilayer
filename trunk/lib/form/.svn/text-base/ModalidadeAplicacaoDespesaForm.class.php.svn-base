@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ModalidadeAplicacaoDespesa form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ModalidadeAplicacaoDespesaForm extends BaseModalidadeAplicacaoDespesaForm
+{
+  public function configure()
+  {
+  }
+}

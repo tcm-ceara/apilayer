@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Errosdel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ErrosdelForm extends BaseErrosdelForm
+{
+  public function configure()
+  {
+  }
+}

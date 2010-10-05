@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Reingressos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ReingressosForm extends BaseReingressosForm
+{
+  public function configure()
+  {
+  }
+}

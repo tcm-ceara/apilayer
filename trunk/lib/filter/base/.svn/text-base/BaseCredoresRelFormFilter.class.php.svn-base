@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * CredoresRel filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseCredoresRelFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'nm_negociante_ng' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nu_doc_ng'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_municipio'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nm_municipio'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'vl_empenhado'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'vl_pago'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'ano'              => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'nm_negociante_ng' => new sfValidatorPass(array('required' => false)),
+      'nu_doc_ng'        => new sfValidatorPass(array('required' => false)),
+      'cd_municipio'     => new sfValidatorPass(array('required' => false)),
+      'nm_municipio'     => new sfValidatorPass(array('required' => false)),
+      'vl_empenhado'     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'vl_pago'          => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'ano'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+    ));
+
+    $this->widgetSchema->setNameFormat('credores_rel_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'CredoresRel';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'nm_negociante_ng' => 'Text',
+      'nu_doc_ng'        => 'Text',
+      'cd_municipio'     => 'Text',
+      'nm_municipio'     => 'Text',
+      'vl_empenhado'     => 'Number',
+      'vl_pago'          => 'Number',
+      'ano'              => 'Number',
+      'id'               => 'Number',
+    );
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * NotasFiscais form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class NotasFiscaisForm extends BaseNotasFiscaisForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Erros3 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class Erros3Form extends BaseErros3Form
+{
+  public function configure()
+  {
+  }
+}

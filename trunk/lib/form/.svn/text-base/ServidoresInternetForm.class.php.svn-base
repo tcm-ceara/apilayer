@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ServidoresInternet form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ServidoresInternetForm extends BaseServidoresInternetForm
+{
+  public function configure()
+  {
+  }
+}

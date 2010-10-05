@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * NeCorrecao form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class NeCorrecaoForm extends BaseNeCorrecaoForm
+{
+  public function configure()
+  {
+  }
+}

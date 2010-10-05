@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * GestSubstitutos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class GestSubstitutosForm extends BaseGestSubstitutosForm
+{
+  public function configure()
+  {
+  }
+}

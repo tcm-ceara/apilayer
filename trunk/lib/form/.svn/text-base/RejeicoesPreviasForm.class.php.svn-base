@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * RejeicoesPrevias form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class RejeicoesPreviasForm extends BaseRejeicoesPreviasForm
+{
+  public function configure()
+  {
+  }
+}

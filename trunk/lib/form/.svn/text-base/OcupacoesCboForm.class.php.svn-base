@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OcupacoesCbo form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OcupacoesCboForm extends BaseOcupacoesCboForm
+{
+  public function configure()
+  {
+  }
+}

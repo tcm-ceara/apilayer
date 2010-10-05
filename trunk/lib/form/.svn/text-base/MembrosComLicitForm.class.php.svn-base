@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * MembrosComLicit form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class MembrosComLicitForm extends BaseMembrosComLicitForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Negociantes form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class NegociantesForm extends BaseNegociantesForm
+{
+  public function configure()
+  {
+  }
+}

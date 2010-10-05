@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Processo form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ProcessoForm extends BaseProcessoForm
+{
+  public function configure()
+  {
+  }
+}

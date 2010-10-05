@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EmpenhosBensDel filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class EmpenhosBensDelFormFilter extends BaseEmpenhosBensDelFormFilter
+{
+  public function configure()
+  {
+  }
+}

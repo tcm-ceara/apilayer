@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Subfuncoes form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class SubfuncoesForm extends BaseSubfuncoesForm
+{
+  public function configure()
+  {
+  }
+}

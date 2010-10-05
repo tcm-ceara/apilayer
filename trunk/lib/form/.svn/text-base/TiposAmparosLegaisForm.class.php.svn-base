@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposAmparosLegais form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposAmparosLegaisForm extends BaseTiposAmparosLegaisForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OrgaosInternet form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrgaosInternetForm extends BaseOrgaosInternetForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * SubsidiosAutoridades form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class SubsidiosAutoridadesForm extends BaseSubsidiosAutoridadesForm
+{
+  public function configure()
+  {
+  }
+}

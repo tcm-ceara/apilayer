@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * RespEngenObras form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class RespEngenObrasForm extends BaseRespEngenObrasForm
+{
+  public function configure()
+  {
+  }
+}

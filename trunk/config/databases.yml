@@ -1,0 +1,15 @@
+all:
+  propel:
+    class:      sfPropelDatabase
+    param:      
+      dsn: pgsql:host=localhost;dbname=api;user=usuario;password=senha
+      
+  api:
+    class:      sfPropelDatabase
+    param:      
+      dsn: pgsql:host=localhost;dbname=api;user=usuario;password=senha
+      
+  banco_aberto:
+    class:      sfPropelDatabase
+    param:      
+      dsn: pgsql:host=localhost;dbname=api;user=usuario;password=senha

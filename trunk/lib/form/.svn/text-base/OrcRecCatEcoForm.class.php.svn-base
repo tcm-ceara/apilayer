@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OrcRecCatEco form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrcRecCatEcoForm extends BaseOrcRecCatEcoForm
+{
+  public function configure()
+  {
+  }
+}

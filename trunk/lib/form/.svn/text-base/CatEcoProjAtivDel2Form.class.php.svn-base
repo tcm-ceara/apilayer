@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CatEcoProjAtivDel2 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CatEcoProjAtivDel2Form extends BaseCatEcoProjAtivDel2Form
+{
+  public function configure()
+  {
+  }
+}

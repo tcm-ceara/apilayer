@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CboCerto form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CboCertoForm extends BaseCboCertoForm
+{
+  public function configure()
+  {
+  }
+}

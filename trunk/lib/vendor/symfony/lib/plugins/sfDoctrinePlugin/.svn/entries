@@ -1,0 +1,80 @@
+10
+
+dir
+35
+svn://192.168.0.34/repositorios/api/trunk/lib/vendor/symfony/lib/plugins/sfDoctrinePlugin
+svn://192.168.0.34/repositorios/api
+
+
+
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1cd0ad94-b1b1-4a8b-9bd3-0a9d0c6fd1a1
+
+i18n
+dir
+
+test
+dir
+
+LICENSE
+file
+
+
+
+
+2010-06-29T14:31:54.000000Z
+80471cf84254400024258aca8bbce630
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1064
+
+config
+dir
+
+lib
+dir
+
+data
+dir
+
+web
+dir
+

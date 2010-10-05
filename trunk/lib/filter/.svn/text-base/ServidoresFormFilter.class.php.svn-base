@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Servidores filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class ServidoresFormFilter extends BaseServidoresFormFilter
+{
+  public function configure()
+  {
+  }
+}

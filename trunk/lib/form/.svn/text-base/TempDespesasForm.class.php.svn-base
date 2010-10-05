@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TempDespesas form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TempDespesasForm extends BaseTempDespesasForm
+{
+  public function configure()
+  {
+  }
+}

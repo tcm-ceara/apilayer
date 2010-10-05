@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * LicitacoesDel filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class LicitacoesDelFormFilter extends BaseLicitacoesDelFormFilter
+{
+  public function configure()
+  {
+  }
+}

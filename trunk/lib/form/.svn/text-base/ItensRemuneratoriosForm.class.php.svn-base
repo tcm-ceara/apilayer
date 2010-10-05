@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ItensRemuneratorios form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ItensRemuneratoriosForm extends BaseItensRemuneratoriosForm
+{
+  public function configure()
+  {
+  }
+}

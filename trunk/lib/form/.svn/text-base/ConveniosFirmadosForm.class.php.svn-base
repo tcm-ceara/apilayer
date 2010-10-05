@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ConveniosFirmados form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ConveniosFirmadosForm extends BaseConveniosFirmadosForm
+{
+  public function configure()
+  {
+  }
+}

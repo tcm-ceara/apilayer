@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * SubsidiosVereadores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class SubsidiosVereadoresForm extends BaseSubsidiosVereadoresForm
+{
+  public function configure()
+  {
+  }
+}

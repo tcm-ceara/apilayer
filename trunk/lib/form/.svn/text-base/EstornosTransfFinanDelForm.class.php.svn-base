@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EstornosTransfFinanDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EstornosTransfFinanDelForm extends BaseEstornosTransfFinanDelForm
+{
+  public function configure()
+  {
+  }
+}

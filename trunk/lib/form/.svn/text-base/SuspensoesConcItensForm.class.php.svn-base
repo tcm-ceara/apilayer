@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * SuspensoesConcItens form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class SuspensoesConcItensForm extends BaseSuspensoesConcItensForm
+{
+  public function configure()
+  {
+  }
+}

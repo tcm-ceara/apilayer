@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ContasExtraOrc form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ContasExtraOrcForm extends BaseContasExtraOrcForm
+{
+  public function configure()
+  {
+  }
+}

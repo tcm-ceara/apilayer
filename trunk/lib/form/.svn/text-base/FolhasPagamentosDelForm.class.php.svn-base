@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * FolhasPagamentosDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class FolhasPagamentosDelForm extends BaseFolhasPagamentosDelForm
+{
+  public function configure()
+  {
+  }
+}

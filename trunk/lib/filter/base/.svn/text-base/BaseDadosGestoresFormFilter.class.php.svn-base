@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * DadosGestores filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseDadosGestoresFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'de_ender_gestor'     => new sfWidgetFormFilterInput(),
+      'nu_cep_gestor'       => new sfWidgetFormFilterInput(),
+      'nu_fone_gestor'      => new sfWidgetFormFilterInput(),
+      'nm_gestor'           => new sfWidgetFormFilterInput(),
+      'de_email_gestor'     => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'de_ender_gestor'     => new sfValidatorPass(array('required' => false)),
+      'nu_cep_gestor'       => new sfValidatorPass(array('required' => false)),
+      'nu_fone_gestor'      => new sfValidatorPass(array('required' => false)),
+      'nm_gestor'           => new sfValidatorPass(array('required' => false)),
+      'de_email_gestor'     => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('dados_gestores_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'DadosGestores';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'        => 'ForeignKey',
+      'cd_cpf_gestor'       => 'Text',
+      'nu_seq_ender_gestor' => 'Number',
+      'de_ender_gestor'     => 'Text',
+      'nu_cep_gestor'       => 'Text',
+      'nu_fone_gestor'      => 'Text',
+      'nm_gestor'           => 'Text',
+      'de_email_gestor'     => 'Text',
+    );
+  }
+}

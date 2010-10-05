@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UnidadesOrcamentarias filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class UnidadesOrcamentariasFormFilter extends BaseUnidadesOrcamentariasFormFilter
+{
+  public function configure()
+  {
+  }
+}

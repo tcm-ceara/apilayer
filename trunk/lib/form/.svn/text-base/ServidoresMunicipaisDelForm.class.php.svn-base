@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ServidoresMunicipaisDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ServidoresMunicipaisDelForm extends BaseServidoresMunicipaisDelForm
+{
+  public function configure()
+  {
+  }
+}

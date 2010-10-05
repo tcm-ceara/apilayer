@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EstornosPagamentos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EstornosPagamentosForm extends BaseEstornosPagamentosForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OrcDespCatEcoDel2 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrcDespCatEcoDel2Form extends BaseOrcDespCatEcoDel2Form
+{
+  public function configure()
+  {
+  }
+}

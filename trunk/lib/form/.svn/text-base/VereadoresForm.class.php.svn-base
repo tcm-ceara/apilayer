@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Vereadores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class VereadoresForm extends BaseVereadoresForm
+{
+  public function configure()
+  {
+  }
+}

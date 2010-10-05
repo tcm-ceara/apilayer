@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UnidadesOrcamentarias form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class UnidadesOrcamentariasForm extends BaseUnidadesOrcamentariasForm
+{
+  public function configure()
+  {
+  }
+}

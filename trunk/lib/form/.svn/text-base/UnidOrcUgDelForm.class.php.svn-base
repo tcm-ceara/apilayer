@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UnidOrcUgDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class UnidOrcUgDelForm extends BaseUnidOrcUgDelForm
+{
+  public function configure()
+  {
+  }
+}

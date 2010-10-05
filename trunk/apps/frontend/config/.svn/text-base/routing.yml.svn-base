@@ -1,0 +1,30 @@
+# default rules
+doc:
+  url: /doc
+  param: {module: tables, action:index }
+
+method_doc:
+  url: /doc/:id_tabela/:nm_popular_tabela
+  class:   sfPropelRoute
+  options: { model: Tabelas, type: object }
+  param: {module: tables, action:show }  
+  requirements:
+    id_tabela: \d+
+    sf_method: [get]
+
+api:
+  url: /:sys/:version/:method.:sf_format
+  param: {module: api, action:index, version:1_0, sf_format:html, sys: sim }
+
+homepage:
+  url:   /
+  param: { module: main, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

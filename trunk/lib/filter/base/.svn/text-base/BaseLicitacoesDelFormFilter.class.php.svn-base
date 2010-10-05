@@ -1,0 +1,119 @@
+<?php
+
+/**
+ * LicitacoesDel filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseLicitacoesDelFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_municipio'              => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_realizacao_licit_li'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'nu_licitacao_li'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'hr_realizacao_li'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_emissao_edital_li'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'md_licitacao_li'           => new sfWidgetFormFilterInput(),
+      'tp_licitacao_li'           => new sfWidgetFormFilterInput(),
+      'de_objeto_licitacao_li1'   => new sfWidgetFormFilterInput(),
+      'de_objeto_licitacao_li2'   => new sfWidgetFormFilterInput(),
+      'vl_orc_estimado_obj_li'    => new sfWidgetFormFilterInput(),
+      'vl_limite_superior_obj_li' => new sfWidgetFormFilterInput(),
+      'cd_cpf_gestor'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_criac_comissao_cl'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'nu_comissao_licit_cl'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_cpf_resp_homolog_li'    => new sfWidgetFormFilterInput(),
+      'nm_resp_homolog_li'        => new sfWidgetFormFilterInput(),
+      'dt_realizacao_licit_pa'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'md_processo_adm_pa'        => new sfWidgetFormFilterInput(),
+      'cd_cpf_resp_juridico_pa'   => new sfWidgetFormFilterInput(),
+      'nm_resp_juridico_pa'       => new sfWidgetFormFilterInput(),
+      'dt_homologacao_pa'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'de_justifica_preco_pa1'    => new sfWidgetFormFilterInput(),
+      'de_justifica_preco_pa2'    => new sfWidgetFormFilterInput(),
+      'de_motivo_fornec_pa1'      => new sfWidgetFormFilterInput(),
+      'de_motivo_fornec_pa2'      => new sfWidgetFormFilterInput(),
+      'de_fund_legal_pa'          => new sfWidgetFormFilterInput(),
+      'nm_orgao_ata_pa'           => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'cd_municipio'              => new sfValidatorPass(array('required' => false)),
+      'dt_realizacao_licit_li'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'nu_licitacao_li'           => new sfValidatorPass(array('required' => false)),
+      'hr_realizacao_li'          => new sfValidatorPass(array('required' => false)),
+      'dt_emissao_edital_li'      => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'md_licitacao_li'           => new sfValidatorPass(array('required' => false)),
+      'tp_licitacao_li'           => new sfValidatorPass(array('required' => false)),
+      'de_objeto_licitacao_li1'   => new sfValidatorPass(array('required' => false)),
+      'de_objeto_licitacao_li2'   => new sfValidatorPass(array('required' => false)),
+      'vl_orc_estimado_obj_li'    => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'vl_limite_superior_obj_li' => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'cd_cpf_gestor'             => new sfValidatorPass(array('required' => false)),
+      'dt_criac_comissao_cl'      => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'nu_comissao_licit_cl'      => new sfValidatorPass(array('required' => false)),
+      'cd_cpf_resp_homolog_li'    => new sfValidatorPass(array('required' => false)),
+      'nm_resp_homolog_li'        => new sfValidatorPass(array('required' => false)),
+      'dt_realizacao_licit_pa'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'md_processo_adm_pa'        => new sfValidatorPass(array('required' => false)),
+      'cd_cpf_resp_juridico_pa'   => new sfValidatorPass(array('required' => false)),
+      'nm_resp_juridico_pa'       => new sfValidatorPass(array('required' => false)),
+      'dt_homologacao_pa'         => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'de_justifica_preco_pa1'    => new sfValidatorPass(array('required' => false)),
+      'de_justifica_preco_pa2'    => new sfValidatorPass(array('required' => false)),
+      'de_motivo_fornec_pa1'      => new sfValidatorPass(array('required' => false)),
+      'de_motivo_fornec_pa2'      => new sfValidatorPass(array('required' => false)),
+      'de_fund_legal_pa'          => new sfValidatorPass(array('required' => false)),
+      'nm_orgao_ata_pa'           => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('licitacoes_del_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'LicitacoesDel';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'              => 'Text',
+      'dt_realizacao_licit_li'    => 'Date',
+      'nu_licitacao_li'           => 'Text',
+      'hr_realizacao_li'          => 'Text',
+      'dt_emissao_edital_li'      => 'Date',
+      'md_licitacao_li'           => 'Text',
+      'tp_licitacao_li'           => 'Text',
+      'de_objeto_licitacao_li1'   => 'Text',
+      'de_objeto_licitacao_li2'   => 'Text',
+      'vl_orc_estimado_obj_li'    => 'Number',
+      'vl_limite_superior_obj_li' => 'Number',
+      'cd_cpf_gestor'             => 'Text',
+      'dt_criac_comissao_cl'      => 'Date',
+      'nu_comissao_licit_cl'      => 'Text',
+      'cd_cpf_resp_homolog_li'    => 'Text',
+      'nm_resp_homolog_li'        => 'Text',
+      'dt_realizacao_licit_pa'    => 'Date',
+      'md_processo_adm_pa'        => 'Text',
+      'cd_cpf_resp_juridico_pa'   => 'Text',
+      'nm_resp_juridico_pa'       => 'Text',
+      'dt_homologacao_pa'         => 'Date',
+      'de_justifica_preco_pa1'    => 'Text',
+      'de_justifica_preco_pa2'    => 'Text',
+      'de_motivo_fornec_pa1'      => 'Text',
+      'de_motivo_fornec_pa2'      => 'Text',
+      'de_fund_legal_pa'          => 'Text',
+      'nm_orgao_ata_pa'           => 'Text',
+      'id'                        => 'Number',
+    );
+  }
+}

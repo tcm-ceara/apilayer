@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposDocumentos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposDocumentosForm extends BaseTiposDocumentosForm
+{
+  public function configure()
+  {
+  }
+}

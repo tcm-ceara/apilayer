@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * VicePrefeitos filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseVicePrefeitosFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'nm_vice_prefeito'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cpf_vice_prefeito' => new sfWidgetFormFilterInput(),
+      'nu_matricula_vp'   => new sfWidgetFormFilterInput(),
+      'de_partido_vp'     => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'nm_vice_prefeito'  => new sfValidatorPass(array('required' => false)),
+      'cpf_vice_prefeito' => new sfValidatorPass(array('required' => false)),
+      'nu_matricula_vp'   => new sfValidatorPass(array('required' => false)),
+      'de_partido_vp'     => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('vice_prefeitos_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'VicePrefeitos';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'      => 'ForeignKey',
+      'cd_cpf_gestor'     => 'Text',
+      'dt_ini_gestao'     => 'ForeignKey',
+      'nm_vice_prefeito'  => 'Text',
+      'cpf_vice_prefeito' => 'Text',
+      'nu_matricula_vp'   => 'Text',
+      'de_partido_vp'     => 'Text',
+    );
+  }
+}

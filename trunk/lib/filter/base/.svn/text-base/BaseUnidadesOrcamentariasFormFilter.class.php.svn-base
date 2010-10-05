@@ -1,0 +1,302 @@
+<?php
+
+/**
+ * UnidadesOrcamentarias filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseUnidadesOrcamentariasFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_tipo_unid_adm'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nm_unid_orc'                => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'tp_administracao_uo'        => new sfWidgetFormFilterInput(),
+      'bal_desp_extra_orc_list'    => new sfWidgetFormPropelChoice(array('model' => 'ContasExtraOrc', 'add_empty' => true)),
+      'servidores_municipais_list' => new sfWidgetFormPropelChoice(array('model' => 'DadosPessoaisServ', 'add_empty' => true)),
+      'folhas_pagamentos_list'     => new sfWidgetFormPropelChoice(array('model' => 'TiposFolhas', 'add_empty' => true)),
+      'unid_orc_ug_list'           => new sfWidgetFormPropelChoice(array('model' => 'UnidGestoras', 'add_empty' => true)),
+      'bal_rec_extra_orc_list'     => new sfWidgetFormPropelChoice(array('model' => 'ContasExtraOrc', 'add_empty' => true)),
+      'despesas_extra_orc_list'    => new sfWidgetFormPropelChoice(array('model' => 'ContasExtraOrc', 'add_empty' => true)),
+      'variacoes_extra_orc_list'   => new sfWidgetFormPropelChoice(array('model' => 'ContasExtraOrc', 'add_empty' => true)),
+      'orc_desp_proj_ativ_list'    => new sfWidgetFormPropelChoice(array('model' => 'Programas', 'add_empty' => true)),
+      'taloes_extras_list'         => new sfWidgetFormPropelChoice(array('model' => 'ContasExtraOrc', 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'cd_tipo_unid_adm'           => new sfValidatorPass(array('required' => false)),
+      'nm_unid_orc'                => new sfValidatorPass(array('required' => false)),
+      'tp_administracao_uo'        => new sfValidatorPass(array('required' => false)),
+      'bal_desp_extra_orc_list'    => new sfValidatorPropelChoice(array('model' => 'ContasExtraOrc', 'required' => false)),
+      'servidores_municipais_list' => new sfValidatorPropelChoice(array('model' => 'DadosPessoaisServ', 'required' => false)),
+      'folhas_pagamentos_list'     => new sfValidatorPropelChoice(array('model' => 'TiposFolhas', 'required' => false)),
+      'unid_orc_ug_list'           => new sfValidatorPropelChoice(array('model' => 'UnidGestoras', 'required' => false)),
+      'bal_rec_extra_orc_list'     => new sfValidatorPropelChoice(array('model' => 'ContasExtraOrc', 'required' => false)),
+      'despesas_extra_orc_list'    => new sfValidatorPropelChoice(array('model' => 'ContasExtraOrc', 'required' => false)),
+      'variacoes_extra_orc_list'   => new sfValidatorPropelChoice(array('model' => 'ContasExtraOrc', 'required' => false)),
+      'orc_desp_proj_ativ_list'    => new sfValidatorPropelChoice(array('model' => 'Programas', 'required' => false)),
+      'taloes_extras_list'         => new sfValidatorPropelChoice(array('model' => 'ContasExtraOrc', 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('unidades_orcamentarias_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function addBalDespExtraOrcListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(BalDespExtraOrcPeer::CD_ORGAO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(BalDespExtraOrcPeer::CD_MUNICIPIO, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(BalDespExtraOrcPeer::CD_MUNICIPIO, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addServidoresMunicipaisListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(ServidoresMunicipaisPeer::CD_MUNICIPIO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(ServidoresMunicipaisPeer::CD_CPF_SERV_MUNI, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(ServidoresMunicipaisPeer::CD_CPF_SERV_MUNI, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addFolhasPagamentosListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(FolhasPagamentosPeer::DT_VERSAO_ORC, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(FolhasPagamentosPeer::TP_FOLHA, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(FolhasPagamentosPeer::TP_FOLHA, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addUnidOrcUgListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(UnidOrcUgPeer::CD_MUNICIPIO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(UnidOrcUgPeer::CD_UNID_GEST_UG, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(UnidOrcUgPeer::CD_UNID_GEST_UG, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addBalRecExtraOrcListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(BalRecExtraOrcPeer::CD_ORGAO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(BalRecExtraOrcPeer::CD_MUNICIPIO, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(BalRecExtraOrcPeer::CD_MUNICIPIO, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addDespesasExtraOrcListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(DespesasExtraOrcPeer::CD_ORGAO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(DespesasExtraOrcPeer::CD_MUNICIPIO, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(DespesasExtraOrcPeer::CD_MUNICIPIO, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addVariacoesExtraOrcListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(VariacoesExtraOrcPeer::CD_ORGAO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(VariacoesExtraOrcPeer::CD_MUNICIPIO, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(VariacoesExtraOrcPeer::CD_MUNICIPIO, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addOrcDespProjAtivListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(OrcDespProjAtivPeer::CD_ORGAO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(OrcDespProjAtivPeer::CD_MUNICIPIO, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(OrcDespProjAtivPeer::CD_MUNICIPIO, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addTaloesExtrasListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(TaloesExtrasPeer::CD_ORGAO, UnidadesOrcamentariasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(TaloesExtrasPeer::CD_MUNICIPIO, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(TaloesExtrasPeer::CD_MUNICIPIO, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function getModelName()
+  {
+    return 'UnidadesOrcamentarias';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'               => 'ForeignKey',
+      'dt_versao_orc'              => 'ForeignKey',
+      'cd_orgao'                   => 'ForeignKey',
+      'cd_unid_orc'                => 'Text',
+      'cd_tipo_unid_adm'           => 'Text',
+      'nm_unid_orc'                => 'Text',
+      'tp_administracao_uo'        => 'Text',
+      'bal_desp_extra_orc_list'    => 'ManyKey',
+      'servidores_municipais_list' => 'ManyKey',
+      'folhas_pagamentos_list'     => 'ManyKey',
+      'unid_orc_ug_list'           => 'ManyKey',
+      'bal_rec_extra_orc_list'     => 'ManyKey',
+      'despesas_extra_orc_list'    => 'ManyKey',
+      'variacoes_extra_orc_list'   => 'ManyKey',
+      'orc_desp_proj_ativ_list'    => 'ManyKey',
+      'taloes_extras_list'         => 'ManyKey',
+    );
+  }
+}

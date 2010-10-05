@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UnidOrcBensDel filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class UnidOrcBensDelFormFilter extends BaseUnidOrcBensDelFormFilter
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * PensionistasSe form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class PensionistasSeForm extends BasePensionistasSeForm
+{
+  public function configure()
+  {
+  }
+}

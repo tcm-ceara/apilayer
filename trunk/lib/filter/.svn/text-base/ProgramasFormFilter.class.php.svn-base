@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Programas filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class ProgramasFormFilter extends BaseProgramasFormFilter
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Gestores form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class GestoresForm extends BaseGestoresForm
+{
+  public function configure()
+  {
+  }
+}

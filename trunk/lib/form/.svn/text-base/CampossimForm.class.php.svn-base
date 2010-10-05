@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Campossim form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CampossimForm extends BaseCampossimForm
+{
+  public function configure()
+  {
+  }
+}

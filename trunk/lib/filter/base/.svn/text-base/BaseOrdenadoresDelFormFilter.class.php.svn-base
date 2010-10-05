@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * OrdenadoresDel filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseOrdenadoresDelFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_municipio'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_versao_orc'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_unid_gest_ug'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_orgao'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_unid_orc'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_inclusao_uog'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'cd_cpf_serv_muni'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_ingresso'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_vinculo'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nu_expediente_no'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_ini_gestao_ord' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'dt_ref_ord'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nm_ordenador_ord'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_fim_gestao_ord' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'cd_tipo_cargo'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+    ));
+
+    $this->setValidators(array(
+      'cd_municipio'      => new sfValidatorPass(array('required' => false)),
+      'dt_versao_orc'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'cd_unid_gest_ug'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'cd_orgao'          => new sfValidatorPass(array('required' => false)),
+      'cd_unid_orc'       => new sfValidatorPass(array('required' => false)),
+      'dt_inclusao_uog'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'cd_cpf_serv_muni'  => new sfValidatorPass(array('required' => false)),
+      'cd_ingresso'       => new sfValidatorPass(array('required' => false)),
+      'cd_vinculo'        => new sfValidatorPass(array('required' => false)),
+      'nu_expediente_no'  => new sfValidatorPass(array('required' => false)),
+      'dt_ini_gestao_ord' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'dt_ref_ord'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'nm_ordenador_ord'  => new sfValidatorPass(array('required' => false)),
+      'dt_fim_gestao_ord' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'cd_tipo_cargo'     => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('ordenadores_del_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'OrdenadoresDel';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'      => 'Text',
+      'dt_versao_orc'     => 'Number',
+      'cd_unid_gest_ug'   => 'Number',
+      'cd_orgao'          => 'Text',
+      'cd_unid_orc'       => 'Text',
+      'dt_inclusao_uog'   => 'Date',
+      'cd_cpf_serv_muni'  => 'Text',
+      'cd_ingresso'       => 'Text',
+      'cd_vinculo'        => 'Text',
+      'nu_expediente_no'  => 'Text',
+      'dt_ini_gestao_ord' => 'Date',
+      'dt_ref_ord'        => 'Number',
+      'nm_ordenador_ord'  => 'Text',
+      'dt_fim_gestao_ord' => 'Date',
+      'cd_tipo_cargo'     => 'Text',
+      'id'                => 'Number',
+    );
+  }
+}

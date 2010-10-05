@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AgentesFolhasDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AgentesFolhasDelForm extends BaseAgentesFolhasDelForm
+{
+  public function configure()
+  {
+  }
+}

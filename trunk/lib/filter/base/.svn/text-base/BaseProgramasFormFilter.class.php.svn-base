@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * Programas filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseProgramasFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'nm_programa'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'orc_desp_proj_ativ_list' => new sfWidgetFormPropelChoice(array('model' => 'UnidadesOrcamentarias', 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'nm_programa'             => new sfValidatorPass(array('required' => false)),
+      'orc_desp_proj_ativ_list' => new sfValidatorPropelChoice(array('model' => 'UnidadesOrcamentarias', 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('programas_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function addOrcDespProjAtivListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(OrcDespProjAtivPeer::CD_MUNICIPIO, ProgramasPeer::CD_MUNICIPIO);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(OrcDespProjAtivPeer::CD_ORGAO, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(OrcDespProjAtivPeer::CD_ORGAO, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function getModelName()
+  {
+    return 'Programas';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'            => 'Text',
+      'dt_versao_orc'           => 'ForeignKey',
+      'cd_programa'             => 'Text',
+      'nm_programa'             => 'Text',
+      'orc_desp_proj_ativ_list' => 'ManyKey',
+    );
+  }
+}

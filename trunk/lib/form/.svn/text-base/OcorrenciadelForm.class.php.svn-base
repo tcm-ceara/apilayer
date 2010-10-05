@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Ocorrenciadel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OcorrenciadelForm extends BaseOcorrenciadelForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * EmpenhosBensDel filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseEmpenhosBensDelFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_municipio'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nu_registro_bem' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_versao_orc'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_orgao'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_unid_orc'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_emissao_ne'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'nu_nota_empenho' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_ref_eb'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+    ));
+
+    $this->setValidators(array(
+      'cd_municipio'    => new sfValidatorPass(array('required' => false)),
+      'nu_registro_bem' => new sfValidatorPass(array('required' => false)),
+      'dt_versao_orc'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'cd_orgao'        => new sfValidatorPass(array('required' => false)),
+      'cd_unid_orc'     => new sfValidatorPass(array('required' => false)),
+      'dt_emissao_ne'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'nu_nota_empenho' => new sfValidatorPass(array('required' => false)),
+      'dt_ref_eb'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+    ));
+
+    $this->widgetSchema->setNameFormat('empenhos_bens_del_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'EmpenhosBensDel';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'    => 'Text',
+      'nu_registro_bem' => 'Text',
+      'dt_versao_orc'   => 'Number',
+      'cd_orgao'        => 'Text',
+      'cd_unid_orc'     => 'Text',
+      'dt_emissao_ne'   => 'Date',
+      'nu_nota_empenho' => 'Text',
+      'dt_ref_eb'       => 'Number',
+      'id'              => 'Number',
+    );
+  }
+}

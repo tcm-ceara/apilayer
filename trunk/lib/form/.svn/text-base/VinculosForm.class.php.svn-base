@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Vinculos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class VinculosForm extends BaseVinculosForm
+{
+  public function configure()
+  {
+  }
+}

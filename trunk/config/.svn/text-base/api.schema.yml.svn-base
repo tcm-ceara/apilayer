@@ -1,0 +1,39 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native  
+  tabela_grupos:
+    _attributes: { phpName: TabelaGrupos }
+    id_grupo: { phpName: IdGrupo, type: INTEGER, size: '4', primaryKey: true, required: true }
+    nm_grupo: { phpName: NmGrupo, type: VARCHAR, size: '100', required: true }    
+    de_grupo: { phpName: DeGrupo, type: VARCHAR, size: '255', required: false }
+    fl_ativo: { phpName: FlAtivo, type: CHAR, size: '1', required: false }
+    fl_ordem: { phpName: FlOrdem, type: INTEGER, size: '4', required: false }
+  tabelas:
+    _attributes: { phpName: Tabelas }
+    id_tabela: { phpName: IdTabela, type: INTEGER, size: '4', primaryKey: true, required: true }
+    id_grupo: { phpName: IdGrupo, type: INTEGER, size: '4', required: true, foreignTable: tabela_grupos, foreignReference: id_grupo }
+    nm_tabela: { phpName: NmTabela, type: VARCHAR, size: '100', required: true }
+    nm_popular_tabela: { phpName: NmPopularTabela, type: VARCHAR, size: '100', required: true }
+    de_tabela: { phpName: DeTabela, type: VARCHAR, size: '255', required: false }
+    fl_ativo: { phpName: FlAtivo, type: CHAR, size: '1', required: false }
+    nm_conexao: { phpName: NmConexao, type: VARCHAR, size: '20', required: false }
+  campo_tipos:
+    _attributes: { phpName: CampoTipos }
+    id_tipo: { phpName: IdTipo, type: INTEGER, size: '4', primaryKey: true, required: true }
+    nm_tipo: { phpName: NmTipo, type: VARCHAR, size: '100', required: true }    
+    de_tipo: { phpName: DeTabela, type: VARCHAR, size: '255', required: false }
+    fl_ativo: { phpName: FlAtivo, type: CHAR, size: '1', required: false }
+  dicionario_dados:
+    _attributes: { phpName: DicionarioDados }
+    id_campo: { phpName: IdCampo, type: INTEGER, size: '4', primaryKey: true, required: true }
+    id_tabela: { phpName: IdTabela, type: INTEGER, size: '4', required: true, foreignTable: tabelas, foreignReference: id_tabela }
+    id_tipo: { phpName: IdTipo, type: INTEGER, size: '4', required: true, foreignTable: campo_tipos, foreignReference: id_tipo }
+    nm_campo: { phpName: NmCampo, type: VARCHAR, size: '100', required: true }
+    nm_popular_Campo: { phpName: NmPopularCampo, type: VARCHAR, size: '100', required: true }
+    de_Campo: { phpName: DeCampo, type: VARCHAR, size: '255', required: false }
+    fl_requerido: { phpName: FlRequerido, type: CHAR, size: '1', required: false }        
+    fl_ativo: { phpName: FlAtivo, type: CHAR, size: '1', required: false }
+    fl_entrada: { phpName: FlEntrada, type: CHAR, size: '1', required: false }
+    de_formato: { phpName: DeFormato, type: VARCHAR, size: '255', required: false }
+  

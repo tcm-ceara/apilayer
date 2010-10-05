@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OrgaosDel2 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrgaosDel2Form extends BaseOrgaosDel2Form
+{
+  public function configure()
+  {
+  }
+}

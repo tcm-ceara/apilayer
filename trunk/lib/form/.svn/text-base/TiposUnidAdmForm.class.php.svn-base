@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposUnidAdm form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposUnidAdmForm extends BaseTiposUnidAdmForm
+{
+  public function configure()
+  {
+  }
+}

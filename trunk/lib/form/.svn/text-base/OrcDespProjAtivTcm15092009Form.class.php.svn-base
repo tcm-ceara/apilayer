@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * OrcDespProjAtivTcm15092009 form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrcDespProjAtivTcm15092009Form extends BaseOrcDespProjAtivTcm15092009Form
+{
+  public function configure()
+  {
+  }
+}

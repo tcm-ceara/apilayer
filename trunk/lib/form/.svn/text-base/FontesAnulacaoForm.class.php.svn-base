@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * FontesAnulacao form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class FontesAnulacaoForm extends BaseFontesAnulacaoForm
+{
+  public function configure()
+  {
+  }
+}

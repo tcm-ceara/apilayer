@@ -1,0 +1,254 @@
+10
+
+dir
+35
+svn://192.168.0.34/repositorios/api/trunk/lib/vendor/symfony/test/unit
+svn://192.168.0.34/repositorios/api
+
+
+
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1cd0ad94-b1b1-4a8b-9bd3-0a9d0c6fd1a1
+
+sfContextMock.class.php
+file
+
+
+
+
+2010-06-29T14:31:47.000000Z
+17a0ddbe97fbf41ddd8e30dacda197df
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2518
+
+escaper
+dir
+
+controller
+dir
+
+widget
+dir
+
+validator
+dir
+
+debug
+dir
+
+generator
+dir
+
+response
+dir
+
+plugin
+dir
+
+exception
+dir
+
+sfParameterHolderTest.class.php
+file
+
+
+
+
+2010-06-29T14:31:47.000000Z
+db7c23fd543826a2a730c792dce2e2ef
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2703
+
+task
+dir
+
+cache
+dir
+
+storage
+dir
+
+database
+dir
+
+sfNoRouting.class.php
+file
+
+
+
+
+2010-06-29T14:31:47.000000Z
+534a2b7418fa74989d5b371445c1b0b6
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2257
+
+autoload
+dir
+
+mailer
+dir
+
+view
+dir
+
+command
+dir
+
+i18n
+dir
+
+helper
+dir
+
+test
+dir
+
+log
+dir
+
+filter
+dir
+
+addon
+dir
+
+routing
+dir
+
+request
+dir
+
+form
+dir
+
+config
+dir
+
+sfEventDispatcherTest.class.php
+file
+
+
+
+
+2010-06-29T14:31:47.000000Z
+9018ca552cb0d726007a4ea0a64325ad
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1353
+
+action
+dir
+
+util
+dir
+
+user
+dir
+

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TaloesReceitasDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TaloesReceitasDelForm extends BaseTaloesReceitasDelForm
+{
+  public function configure()
+  {
+  }
+}

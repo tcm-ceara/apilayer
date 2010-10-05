@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CboMunicipais form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CboMunicipaisForm extends BaseCboMunicipaisForm
+{
+  public function configure()
+  {
+  }
+}

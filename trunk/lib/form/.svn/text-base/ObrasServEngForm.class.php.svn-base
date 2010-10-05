@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * ObrasServEng form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ObrasServEngForm extends BaseObrasServEngForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DotacoesLicitacoes form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DotacoesLicitacoesForm extends BaseDotacoesLicitacoesForm
+{
+  public function configure()
+  {
+  }
+}

@@ -1,0 +1,55 @@
+Identificação
+
+Número do Chamado no Tocomon 
+    7763 
+Solicitante 
+    Ricardo Rebouças, DITEC, 5181, ricardo@tcm.ce.gov.br
+Visão Geral 
+    A lei complementar 131 de 27 de maio de 2009 determina a disponibilização, em tempo real, de informações pormenorizadas sobre a execução orçamentária e financeira da União, dos Estados, do Distrito Federal e dos Municípios. O TCM/CE está incluso nesse contexto e tem até o dia 5 de julho para disponibilizar seus dados. O SIM, em sua essência, é um instrumento de acompanhamento da execução orçamentária e financeira. Portanto, iremos paroveitar toda sua infra-estrutura de banco de dados para que o TCM/CE disponibilize suas informações. Seŕa desenvolvida uma aplicação via Web que permitirá que o TCM/CE alimente através de cadastros suas informações. Essa nova aplicação permitirá a exibição dos dados em tempo real, seja pelo Portal da Transparência ou por outro mecanismo qualquer. Aproveitaremos para desenvolver uma API para disponibilização dos dados através de programas de computador, permitindo a criação de novas aplicações por pessoas externas ao TCM/CE, permitindo a interação e cruzamento de informações com outras fontes de maneira automatizada. Para o lançamento do Projeto serão contempladas as seguintes informações: Dados Básicos(Órgãos, Unidades Orçamentárias, Unidades Gestoras, Funções, Contas Bancárias, Gestores e Ordenadores de Despesas, Empresas Negociantes), Orçamento(Programas, Orçamentos por projetos, Orçamento por Elemento, Orçamento por Projeto e Elemento), Licitações(Comissão de licitação, Dotações, Licitações e seus itens, Publicações, Participantes e Licitantes, Contratos e Contratados), Despesas(Notas de Empenho e suas anulações, Origem de Recursos, Liquidações e seus estornos, Notas de pagamentos e seus estornos, Cheques notas-fiscais e seus itens) e Receitas(Orçamento por receita, Talões de receita e suas anulações, Talões de receita extra-orçamentária e suas anulações). A API deve permitir acesso de leitura a esses dados.
+    
+Resultados e Beneficiados
+	As áreas diretamente envolvidas são Presidencia, DIAFI e DITEC.	O principal resultado esperado é o atendimento a regulamentação,tendo como maior beneficiado opovo que terá acesso aos dados, inclusive por meio de programas de computador. Aproveitaremos para criar uma API para acesso aos dados do SIM.
+
+Premissas/Restrições/Riscos
+	- Uso do SIM como plataforma base, todas suas regras/validações devem ser obedecidas. Ex.: Campos obrigatorios, relações de dependência entre informações, verificações de pré-requisitos, consistência e coerência de dados; 
+	- A data limite para pleno funcionamento é 05/07/2010;	
+	- As telas serão padronizadas de acordo com o [http://gomockingbird.com/mockingbird/index.html?project=1d8b93d3135ee954e0db28a32e3b70d1ba28ff49|exemplo]
+	- A API deve disponibilizar em um primeiro momento os dados somente para leitura;
+	- A API deve controlar a quantidade de requisições, para evitar o uso indevido dos recursos;
+	- Não está prevista a elaboração de relatórios, serão utilizadas as proprias telas de consulta para impressão de informações ou eventuais conferências;
+		
+Responsável pela especificação 
+	Beatriz Maia
+
+Responsável pela proposta 
+	Ricardo Rebouças
+
+Funcionalidades
+
+As funcionalidades de cadastro consistem na elaboração de um formulário para preenchimento dos dados. A sequencia adotada para os campos será a mesma definida no manual do SIM. Em cada funcionalidade de cadastro descrita a seguir, o item da funcionalidade que estiver marcado com (*) será tratado como item principal, enquanto os demais serão secundários vinculados ao principal(Exemplo: Unidades Orçamentárias é um item principal e suas unidades gestoras são itens secundários vinculados).
+
+01 Login
+	O acesso ao aplicativo será através da matricula/senha utilizada para entrada na rede do TCM/CE.
+	[[Media:Logon_sim_online.png]]
+	
+02 Painel
+	O painel será a tela de boas-vindas do aplicativo e deverá conter informações resumidas e acesso rápido a principais funções.Vide Exemplo.
+	
+03 Cadastro Dados Básicos - Órgãos
+04 Cadastro Dados Básicos - Unidades Orçamentárias, Unidades Gestoras, Contas Bancárias, Gestores e Ordenadores de Despesas
+05 Cadastro Dados Básicos - Funções
+06 Cadastro Dados Básicos - Empresas Negociantes
+07 Cadastro Orçamento - Programas
+08 Cadastro Orçamento - Projetos
+09 Cadastro Orçamento - Elemento
+10 Cadastro Orçamento - Projeto e Elemento
+11 Cadastro Licitações - Comissão de licitação
+12 Cadastro Licitações - Licitações e seus itens, Dotações, Publicações, Participantes e Vencedores
+13 Cadastro Licitações - Contratos e Contratados
+14 Cadastro Despesas - Notas de Empenho e suas anulações, Origem de Recursos
+15 Cadastro Despesas - Liquidações e seus estornos
+16 Cadastro Despesas - Notas de pagamentos e seus estornos, Cheques, Notas-fiscais e seus itens
+17 Cadastro Receitas - Orçamento por Receita
+18 Cadastro Receitas - Talões de Receita e suas anulações
+19 Cadastro Receitas - Talões de Receita Extra e suas anulações
+

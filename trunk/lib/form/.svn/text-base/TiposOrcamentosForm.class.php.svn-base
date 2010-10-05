@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposOrcamentos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposOrcamentosForm extends BaseTiposOrcamentosForm
+{
+  public function configure()
+  {
+  }
+}

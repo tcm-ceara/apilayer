@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DeducoesNotasPagas filter form.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+class DeducoesNotasPagasFormFilter extends BaseDeducoesNotasPagasFormFilter
+{
+  public function configure()
+  {
+  }
+}

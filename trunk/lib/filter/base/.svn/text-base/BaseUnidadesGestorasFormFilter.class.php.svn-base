@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * UnidadesGestoras filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseUnidadesGestorasFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_municipio'        => new sfWidgetFormPropelChoice(array('model' => 'Orcamentos', 'add_empty' => true)),
+      'dt_versao_orc'       => new sfWidgetFormPropelChoice(array('model' => 'Orcamentos', 'add_empty' => true)),
+      'cd_cpf_gestor'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'dt_ini_gestao'       => new sfWidgetFormPropelChoice(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'model' => 'DadosGestao', 'add_empty' => true)),
+      'cd_orgao_ug'         => new sfWidgetFormFilterInput(),
+      'cd_unid_orc_ug'      => new sfWidgetFormFilterInput(),
+      'cd_funcao_ug'        => new sfWidgetFormFilterInput(),
+      'cd_subfuncao_ug'     => new sfWidgetFormFilterInput(),
+      'cd_programa_ug'      => new sfWidgetFormFilterInput(),
+      'cd_proj_ativ_ug'     => new sfWidgetFormFilterInput(),
+      'nu_proj_ativ_ug'     => new sfWidgetFormFilterInput(),
+      'nu_sub_proj_ativ_ug' => new sfWidgetFormFilterInput(),
+      'dt_fim_gestao_ug'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'cd_compet_gest_ug'   => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'cd_municipio'        => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Orcamentos', 'column' => 'cd_municipio')),
+      'dt_versao_orc'       => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Orcamentos', 'column' => 'dt_versao_orc')),
+      'cd_cpf_gestor'       => new sfValidatorPass(array('required' => false)),
+      'dt_ini_gestao'       => new sfValidatorPropelChoice(array('required' => false, 'model' => 'DadosGestao', 'column' => 'dt_ini_gestao')),
+      'cd_orgao_ug'         => new sfValidatorPass(array('required' => false)),
+      'cd_unid_orc_ug'      => new sfValidatorPass(array('required' => false)),
+      'cd_funcao_ug'        => new sfValidatorPass(array('required' => false)),
+      'cd_subfuncao_ug'     => new sfValidatorPass(array('required' => false)),
+      'cd_programa_ug'      => new sfValidatorPass(array('required' => false)),
+      'cd_proj_ativ_ug'     => new sfValidatorPass(array('required' => false)),
+      'nu_proj_ativ_ug'     => new sfValidatorPass(array('required' => false)),
+      'nu_sub_proj_ativ_ug' => new sfValidatorPass(array('required' => false)),
+      'dt_fim_gestao_ug'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'cd_compet_gest_ug'   => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('unidades_gestoras_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'UnidadesGestoras';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'        => 'ForeignKey',
+      'dt_versao_orc'       => 'ForeignKey',
+      'cd_cpf_gestor'       => 'Text',
+      'dt_ini_gestao'       => 'ForeignKey',
+      'cd_orgao_ug'         => 'Text',
+      'cd_unid_orc_ug'      => 'Text',
+      'cd_funcao_ug'        => 'Text',
+      'cd_subfuncao_ug'     => 'Text',
+      'cd_programa_ug'      => 'Text',
+      'cd_proj_ativ_ug'     => 'Text',
+      'nu_proj_ativ_ug'     => 'Text',
+      'nu_sub_proj_ativ_ug' => 'Text',
+      'dt_fim_gestao_ug'    => 'Date',
+      'cd_compet_gest_ug'   => 'Text',
+      'id'                  => 'Number',
+    );
+  }
+}

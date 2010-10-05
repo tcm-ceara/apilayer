@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AcrescimoPerdePrazo form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AcrescimoPerdePrazoForm extends BaseAcrescimoPerdePrazoForm
+{
+  public function configure()
+  {
+  }
+}

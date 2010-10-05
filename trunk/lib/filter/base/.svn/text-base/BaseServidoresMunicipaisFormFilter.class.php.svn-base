@@ -1,0 +1,111 @@
+<?php
+
+/**
+ * ServidoresMunicipais filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseServidoresMunicipaisFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'nu_matric_muni_sm'    => new sfWidgetFormFilterInput(),
+      'cd_sit_funcional'     => new sfWidgetFormPropelChoice(array('model' => 'SitFuncionais', 'add_empty' => true)),
+      'cd_vinculo'           => new sfWidgetFormPropelChoice(array('model' => 'Vinculos', 'add_empty' => true)),
+      'cd_ocup_cbo'          => new sfWidgetFormFilterInput(),
+      'nu_ato_nomeacao_sm'   => new sfWidgetFormFilterInput(),
+      'dt_ato_nomeacao_sm'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'dt_posse_sm'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'dt_demissao_sm'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'de_simb_carg_com_sm'  => new sfWidgetFormFilterInput(),
+      'de_denom_carg_com_sm' => new sfWidgetFormFilterInput(),
+      'nu_ato_nom_comis_sm'  => new sfWidgetFormFilterInput(),
+      'dt_ato_nom_comis_sm'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'nu_identidade_ds'     => new sfWidgetFormFilterInput(),
+      'de_exped_ident_ds'    => new sfWidgetFormFilterInput(),
+      'nu_tit_eleitor_ds'    => new sfWidgetFormFilterInput(),
+      'cd_est_civil'         => new sfWidgetFormFilterInput(),
+      'cd_instrucao'         => new sfWidgetFormPropelChoice(array('model' => 'GrausInstrucao', 'add_empty' => true)),
+      'cd_sexo_ds'           => new sfWidgetFormFilterInput(),
+      'nm_serv_muni_ds'      => new sfWidgetFormFilterInput(),
+      'de_endereco_ds'       => new sfWidgetFormFilterInput(),
+      'nu_fone_ds'           => new sfWidgetFormFilterInput(),
+      'dt_nascim_ds'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'cd_ingresso_fi'       => new sfWidgetFormPropelChoice(array('model' => 'FormaIngresso', 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'nu_matric_muni_sm'    => new sfValidatorPass(array('required' => false)),
+      'cd_sit_funcional'     => new sfValidatorPropelChoice(array('required' => false, 'model' => 'SitFuncionais', 'column' => 'cd_sit_funcional')),
+      'cd_vinculo'           => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Vinculos', 'column' => 'cd_vinculo')),
+      'cd_ocup_cbo'          => new sfValidatorPass(array('required' => false)),
+      'nu_ato_nomeacao_sm'   => new sfValidatorPass(array('required' => false)),
+      'dt_ato_nomeacao_sm'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'dt_posse_sm'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'dt_demissao_sm'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'de_simb_carg_com_sm'  => new sfValidatorPass(array('required' => false)),
+      'de_denom_carg_com_sm' => new sfValidatorPass(array('required' => false)),
+      'nu_ato_nom_comis_sm'  => new sfValidatorPass(array('required' => false)),
+      'dt_ato_nom_comis_sm'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'nu_identidade_ds'     => new sfValidatorPass(array('required' => false)),
+      'de_exped_ident_ds'    => new sfValidatorPass(array('required' => false)),
+      'nu_tit_eleitor_ds'    => new sfValidatorPass(array('required' => false)),
+      'cd_est_civil'         => new sfValidatorPass(array('required' => false)),
+      'cd_instrucao'         => new sfValidatorPropelChoice(array('required' => false, 'model' => 'GrausInstrucao', 'column' => 'cd_instrucao')),
+      'cd_sexo_ds'           => new sfValidatorPass(array('required' => false)),
+      'nm_serv_muni_ds'      => new sfValidatorPass(array('required' => false)),
+      'de_endereco_ds'       => new sfValidatorPass(array('required' => false)),
+      'nu_fone_ds'           => new sfValidatorPass(array('required' => false)),
+      'dt_nascim_ds'         => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'cd_ingresso_fi'       => new sfValidatorPropelChoice(array('required' => false, 'model' => 'FormaIngresso', 'column' => 'cd_ingresso_fi')),
+    ));
+
+    $this->widgetSchema->setNameFormat('servidores_municipais_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'ServidoresMunicipais';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'         => 'ForeignKey',
+      'dt_versao_orc'        => 'ForeignKey',
+      'cd_orgao'             => 'ForeignKey',
+      'cd_unid_orc'          => 'ForeignKey',
+      'cd_cpf_serv_muni'     => 'ForeignKey',
+      'nu_matric_muni_sm'    => 'Text',
+      'cd_sit_funcional'     => 'ForeignKey',
+      'cd_vinculo'           => 'ForeignKey',
+      'cd_ocup_cbo'          => 'Text',
+      'nu_ato_nomeacao_sm'   => 'Text',
+      'dt_ato_nomeacao_sm'   => 'Date',
+      'dt_posse_sm'          => 'Date',
+      'dt_demissao_sm'       => 'Date',
+      'de_simb_carg_com_sm'  => 'Text',
+      'de_denom_carg_com_sm' => 'Text',
+      'nu_ato_nom_comis_sm'  => 'Text',
+      'dt_ato_nom_comis_sm'  => 'Date',
+      'nu_identidade_ds'     => 'Text',
+      'de_exped_ident_ds'    => 'Text',
+      'nu_tit_eleitor_ds'    => 'Text',
+      'cd_est_civil'         => 'Text',
+      'cd_instrucao'         => 'ForeignKey',
+      'cd_sexo_ds'           => 'Text',
+      'nm_serv_muni_ds'      => 'Text',
+      'de_endereco_ds'       => 'Text',
+      'nu_fone_ds'           => 'Text',
+      'dt_nascim_ds'         => 'Date',
+      'cd_ingresso_fi'       => 'ForeignKey',
+    );
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * PcGovernoSim form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class PcGovernoSimForm extends BasePcGovernoSimForm
+{
+  public function configure()
+  {
+  }
+}

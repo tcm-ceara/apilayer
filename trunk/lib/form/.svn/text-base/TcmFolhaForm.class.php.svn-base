@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TcmFolha form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TcmFolhaForm extends BaseTcmFolhaForm
+{
+  public function configure()
+  {
+  }
+}

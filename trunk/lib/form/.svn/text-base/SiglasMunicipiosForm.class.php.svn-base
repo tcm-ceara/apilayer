@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * SiglasMunicipios form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class SiglasMunicipiosForm extends BaseSiglasMunicipiosForm
+{
+  public function configure()
+  {
+  }
+}

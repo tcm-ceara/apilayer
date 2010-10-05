@@ -1,0 +1,86 @@
+10
+
+dir
+35
+svn://192.168.0.34/repositorios/api/trunk/lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/test/functional/fixtures
+svn://192.168.0.34/repositorios/api
+
+
+
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1cd0ad94-b1b1-4a8b-9bd3-0a9d0c6fd1a1
+
+test
+dir
+
+log
+dir
+
+plugins
+dir
+
+apps
+dir
+
+cache
+dir
+
+symfony
+file
+
+
+
+
+2010-06-29T14:31:52.000000Z
+36073c1914105fb3bbb4f1ce4965b4d2
+2010-06-18T00:02:49.057607Z
+1
+ricardo
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+482
+
+config
+dir
+
+lib
+dir
+
+data
+dir
+

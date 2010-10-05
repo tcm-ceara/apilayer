@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * CreditosAdicionaisDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class CreditosAdicionaisDelForm extends BaseCreditosAdicionaisDelForm
+{
+  public function configure()
+  {
+  }
+}

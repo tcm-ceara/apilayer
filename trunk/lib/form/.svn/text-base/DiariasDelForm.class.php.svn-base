@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DiariasDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DiariasDelForm extends BaseDiariasDelForm
+{
+  public function configure()
+  {
+  }
+}

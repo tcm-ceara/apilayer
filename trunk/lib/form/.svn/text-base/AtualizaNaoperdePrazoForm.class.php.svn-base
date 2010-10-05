@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * AtualizaNaoperdePrazo form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class AtualizaNaoperdePrazoForm extends BaseAtualizaNaoperdePrazoForm
+{
+  public function configure()
+  {
+  }
+}

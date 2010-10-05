@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Resultado form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class ResultadoForm extends BaseResultadoForm
+{
+  public function configure()
+  {
+  }
+}

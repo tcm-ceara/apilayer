@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * Cbo2008 filter form base class.
+ *
+ * @package    ##PROJECT_NAME##
+ * @subpackage filter
+ * @author     ##AUTHOR_NAME##
+ */
+abstract class BaseCbo2008FormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'cd_municipio'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_cpf_serv_muni' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'cd_ocup_cbo'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'quantidade'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+    ));
+
+    $this->setValidators(array(
+      'cd_municipio'     => new sfValidatorPass(array('required' => false)),
+      'cd_cpf_serv_muni' => new sfValidatorPass(array('required' => false)),
+      'cd_ocup_cbo'      => new sfValidatorPass(array('required' => false)),
+      'quantidade'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+    ));
+
+    $this->widgetSchema->setNameFormat('cbo2008_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'Cbo2008';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'cd_municipio'     => 'Text',
+      'cd_cpf_serv_muni' => 'Text',
+      'cd_ocup_cbo'      => 'Text',
+      'quantidade'       => 'Number',
+      'id'               => 'Number',
+    );
+  }
+}

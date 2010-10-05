@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TcmDespesaDesc form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TcmDespesaDescForm extends BaseTcmDespesaDescForm
+{
+  public function configure()
+  {
+  }
+}

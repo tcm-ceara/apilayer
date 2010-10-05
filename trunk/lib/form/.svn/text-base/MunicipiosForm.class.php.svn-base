@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Municipios form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class MunicipiosForm extends BaseMunicipiosForm
+{
+  public function configure()
+  {
+  }
+}

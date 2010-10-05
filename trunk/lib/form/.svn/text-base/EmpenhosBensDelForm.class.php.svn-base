@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EmpenhosBensDel form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EmpenhosBensDelForm extends BaseEmpenhosBensDelForm
+{
+  public function configure()
+  {
+  }
+}

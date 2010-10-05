@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Orgaos form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class OrgaosForm extends BaseOrgaosForm
+{
+  public function configure()
+  {
+  }
+}

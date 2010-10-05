@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * EmpenhosObras form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class EmpenhosObrasForm extends BaseEmpenhosObrasForm
+{
+  public function configure()
+  {
+  }
+}

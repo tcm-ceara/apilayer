@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * DadosPessoaisServ2Del form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class DadosPessoaisServ2DelForm extends BaseDadosPessoaisServ2DelForm
+{
+  public function configure()
+  {
+  }
+}

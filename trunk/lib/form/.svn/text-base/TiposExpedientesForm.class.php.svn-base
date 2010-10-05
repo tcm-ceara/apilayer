@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * TiposExpedientes form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class TiposExpedientesForm extends BaseTiposExpedientesForm
+{
+  public function configure()
+  {
+  }
+}

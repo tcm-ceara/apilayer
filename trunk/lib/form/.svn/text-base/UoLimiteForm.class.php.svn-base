@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * UoLimite form.
+ *
+ * @package    sim
+ * @subpackage form
+ * @author     Your name here
+ */
+class UoLimiteForm extends BaseUoLimiteForm
+{
+  public function configure()
+  {
+  }
+}
